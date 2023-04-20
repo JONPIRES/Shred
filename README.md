@@ -1,4 +1,4 @@
-  # SHRED
+  # SHRED APP
 
  ## User Stories
    - AAS, I want to be able to create my own workout plan 
@@ -11,5 +11,5 @@
    - AAS, I want to log every time I finish an exervise
 
 
-##Wireframe
+## Wireframe
 
