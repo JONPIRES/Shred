@@ -12,7 +12,7 @@
 
 
 ## ERD
-![ERD] (https://files.slack.com/files-tmb/T0351JZQ0-F053Y99M6DV-334ef716e9/project_4-1_720.jpg)
+![image](https://user-images.githubusercontent.com/110505134/233655608-249b8aa5-d5b7-4e33-98e5-d4847f598454.png)
 
 ## Wireframe
 
