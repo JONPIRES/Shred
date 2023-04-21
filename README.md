@@ -16,3 +16,9 @@
 
 ## Wireframe
 
+![Landing-page](https://user-images.githubusercontent.com/110505134/233655684-6e47e03b-cda0-4c0e-a1de-5da225287792.png)
+![Exercise-page](https://user-images.githubusercontent.com/110505134/233655699-e1aca206-95d8-48f8-adf9-643c358fa608.png)
+![View-exercise-page](https://user-images.githubusercontent.com/110505134/233655794-0acf8a99-50f6-4467-9f51-0df4f96b7339.png)
+![Workout-plan-page](https://user-images.githubusercontent.com/110505134/233655951-12beef53-ecac-4f1c-bdc9-7d409296838b.png)
+
+
