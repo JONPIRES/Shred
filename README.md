@@ -11,5 +11,8 @@
    - AAS, I want to log every time I finish an exervise
 
 
+## ERD
+https://files.slack.com/files-tmb/T0351JZQ0-F053Y99M6DV-334ef716e9/project_4-1_720.jpg
+
 ## Wireframe
 
