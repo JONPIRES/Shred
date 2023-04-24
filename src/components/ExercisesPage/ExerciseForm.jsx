@@ -23,8 +23,8 @@ const ExerciseForm = () => {
     e.preventDefault();
     try {
       // this still needs to be created
-      const exercise = await ExerciseService.create(exercise);
-      setUser(user);
+      const newExercise = await ExerciseService.create(exercise);
+      //   setExercise(newExercise);
     } catch {
       setError("Create Exercise Failed - Try Again");
     }
