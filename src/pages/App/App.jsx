@@ -7,6 +7,8 @@ import ViewExercise from "../../components/ViewExercises/ViewExercises";
 import ViewWorkoutPlan from "../../components/ViewWorkoutPlan/ViewWorkoutPlan";
 import NavBar from "../../components/NavBar/NavBar";
 import { getUser } from "../../utilities/users-service";
+import LoginForm from "../../components/LoginForm/LoginForm";
+import SignUpForm from "../../components/SignUpForm/SignUpForm";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -22,12 +24,17 @@ export default function App() {
             <Route path="/exercise" element={<ViewExercise />} />
             <Route path="/workout" element={<ViewWorkoutPlan />} />
             
+            
           </Routes>
         </>
       ) : (
         <>
-      
-            <AuthPage setUser={setUser} />
+          <Routes>
+              <Route path="/signup" element={<SignUpForm />} />
+          </Routes>
+          
+            <LoginForm setUser={setUser} />
+            
         </>
       )}
     </main>
