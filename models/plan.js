@@ -41,15 +41,11 @@ const planSchema = new Schema({
     type: Number,
   },
   exercise: {
-    muscleGroup: {
-      type: String,
-      required: true,
-    },
     exercises: [
       {
         exercise: {
           type: Schema.Types.ObjectId,
-          ref: "Users",
+          ref: "Exercises",
         },
         sets: {
           type: Number,
@@ -67,3 +63,8 @@ const planSchema = new Schema({
     ],
   },
 });
+
+const Plan = mongoose.model("Plan", planSchema);
+const Exercise = mongoose.model("Exercise", exerciseSchema);
+
+module.exports = { Plan, Exercise };
