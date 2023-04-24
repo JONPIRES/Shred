@@ -49,7 +49,7 @@ export default function LoginForm({ setUser }) {
             required
           />
           <button type="submit">LOG IN</button>
-          <Link className="btn-primary" to="/signup"> Sign Up</Link>
+          <Link className="btn primary" to="/signup"> Sign Up</Link>
         </form>
        
       </div>
