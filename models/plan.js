@@ -1,28 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const exerciseSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  muscleGroup: {
-    type: String,
-    required: true,
-  },
-  equipment: {
-    type: String,
-    default: "free weights",
-  },
-  img: {
-    type: String,
-  },
-  explanation: {
-    type: String,
-  },
-});
-
 const planSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
@@ -65,6 +43,5 @@ const planSchema = new Schema({
 });
 
 const Plan = mongoose.model("Plan", planSchema);
-const Exercise = mongoose.model("Exercise", exerciseSchema);
 
-module.exports = { Plan, Exercise };
+module.exports = Plan;
