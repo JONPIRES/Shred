@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import * as ExerciseService from "../../utilities/exercise-services.js";
 
 const ExerciseForm = () => {
   const [exercise, setExercise] = useState({
@@ -21,10 +22,11 @@ const ExerciseForm = () => {
     // Prevent form from being submitted to the server
     e.preventDefault();
     try {
-      const exercise = await ExerciseService.create(exercise);
-      setUser(user);
+      // this still needs to be created
+      const newExercise = await ExerciseService.create(exercise);
+      //   setExercise(newExercise);
     } catch {
-      setError("Log In Failed - Try Again");
+      setError("Create Exercise Failed - Try Again");
     }
   }
 
@@ -36,19 +38,43 @@ const ExerciseForm = () => {
           <input
             type="text"
             name="name"
-            value={credentials.email}
+            value={exercise.name}
             onChange={handleChange}
             required
           />
-          <label>Password</label>
+          <label>Muscle Group</label>
           <input
-            type="password"
-            name="password"
-            value={credentials.password}
+            type="text"
+            name="muscleGroup"
+            value={exercise.muscleGroup}
             onChange={handleChange}
             required
           />
-          <button type="submit">LOG IN</button>
+          <label>equipment</label>
+          <input
+            type="text"
+            name="equipment"
+            value={exercise.equipment}
+            onChange={handleChange}
+            required
+          />
+          <label>Image</label>
+          <input
+            type="text"
+            name="img"
+            value={exercise.img}
+            onChange={handleChange}
+            required
+          />
+          <label>Explanation</label>
+          <input
+            type="text"
+            name="explanation"
+            value={exercise.explanation}
+            onChange={handleChange}
+            required
+          />
+          <button type="submit">Create Exercise </button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>
