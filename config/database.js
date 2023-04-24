@@ -4,7 +4,7 @@ mongoose.connect(process.env.DATABASE_URL);
 
 const db = mongoose.connection;
 
-db.on("connected", function () {
+db.on("connected", function() {
   console.log(
     `[${new Date().toLocaleTimeString()}] - Connected to ${db.name} at ${
       db.host

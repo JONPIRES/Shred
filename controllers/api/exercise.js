@@ -1,5 +1,4 @@
 const express = require("express");
-const router = express.Router();
 const { Exercise } = require('../../models');
 const { getNextKeyDef } = require("@testing-library/user-event/dist/keyboard/getNextKeyDef");
 
