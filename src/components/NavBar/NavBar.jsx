@@ -7,10 +7,13 @@ export default function NavBar({ user, setUser }) {
   }
   return (
     <nav>
-      <Link to="/orders">Order History</Link>
+      <Link to="/create-workout">Create Workout Plan</Link>
       &nbsp; | &nbsp;
-      <Link to="/orders/new">New Order</Link>
+      <Link to="/workout">Workout Plan</Link>
+      &nbsp; | &nbsp;
+      <Link to="/exercise">Exercises</Link>
       &nbsp;&nbsp;
+      
       <span>Welcome, {user && user.name} </span>
       &nbsp;&nbsp;
       <Link to="" onClick={handleLogout}>
