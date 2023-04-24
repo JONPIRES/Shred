@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as usersService from "../../utilities/users-service";
+import { Link } from "react-router-dom"
 
 export default function LoginForm({ setUser }) {
   const [credentials, setCredentials] = useState({
@@ -48,9 +49,12 @@ export default function LoginForm({ setUser }) {
             required
           />
           <button type="submit">LOG IN</button>
+          <Link className="btn-primary" to="/signup"> Sign Up</Link>
         </form>
+       
       </div>
       <p className="error-message">&nbsp;{error}</p>
+      
     </div>
   );
 }
