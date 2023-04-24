@@ -9,6 +9,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import { getUser } from "../../utilities/users-service";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
+import HomePage from "../HomePage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/create-exercise" element={<ExerciseFrom />} />
             <Route path="/exercise" element={<ViewExercise />} />
             <Route path="/workout" element={<ViewWorkoutPlan />} />
+            <Route path="/" element={<HomePage />} />
             
             
           </Routes>
@@ -34,8 +36,8 @@ export default function App() {
           </Routes>
           
             <LoginForm setUser={setUser} />
-            
         </>
+        
       )}
     </main>
   );
