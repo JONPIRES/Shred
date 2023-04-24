@@ -21,9 +21,11 @@ const ExerciseForm = () => {
   async function handleSubmit(e) {
     // Prevent form from being submitted to the server
     e.preventDefault();
+    window.location.replace("/exercise");
     try {
       // this still needs to be created
       await ExerciseService.create(exercise);
+
       //   setExercise(newExercise);
     } catch {
       setError("Create Exercise Failed - Try Again");
