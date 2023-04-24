@@ -7,6 +7,8 @@ export default function NavBar({ user, setUser }) {
   }
   return (
     <nav>
+      <Link to="/">SHRED</Link>
+      &nbsp; | &nbsp;
       <Link to="/create-exercise">Create Exercise</Link>
       &nbsp; | &nbsp;
       <Link to="/workout">Workout Plan</Link>
