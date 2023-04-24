@@ -21,13 +21,13 @@ export default function App() {
             <Route path="/create-exercise" element={<ExerciseFrom />} />
             <Route path="/exercise" element={<ViewExercise />} />
             <Route path="/workout" element={<ViewWorkoutPlan />} />
-            <Route path="/login" element={<AuthPage setUser={setUser}/>} />
+            
           </Routes>
         </>
       ) : (
         <>
-        <NavBar/>
-         <ViewExercise/>
+      
+            <AuthPage setUser={setUser} />
         </>
       )}
     </main>
