@@ -5,17 +5,18 @@ import { useParams } from "react-router-dom";
 
 const ExerciseDetail = () => {
   const [exercise, setExercise] = useState();
-  const { exerciseId } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     async function fetchExercise() {
-      const exercise = await exercisesAPI.detail(exerciseId);
+      const exercise = await exercisesAPI.detail(id);
       setExercise(exercise);
     }
     fetchExercise();
   }, []);
+  console.log(exercise);
 
-  return <div>ExerciseDetail</div>;
+  return <div>{exercise.name}</div>;
 };
 
 export default ExerciseDetail;

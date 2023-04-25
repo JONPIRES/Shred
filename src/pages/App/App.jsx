@@ -9,6 +9,7 @@ import { getUser } from "../../utilities/users-service";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import HomePage from "../HomePage/HomePage";
+import ExerciseDetail from "../../components/ViewExercises/ExerciseDetail";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -22,7 +23,7 @@ export default function App() {
           <Route path="/create-exercise" element={<ExerciseFrom />} />
           <Route path="/exercise" element={<ViewExercises />} />
           <Route path="/workout" element={<ViewWorkoutPlan />} />
-          {/* <Route path="/exercise/:id" element={<ExerciseDetail/>} /> */}
+          <Route path="/exercise/:id" element={<ExerciseDetail />} />
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
           <Route path="/" element={<HomePage />} />
