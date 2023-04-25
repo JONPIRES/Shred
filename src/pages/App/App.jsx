@@ -9,14 +9,14 @@ import NavBar from "../../components/NavBar/NavBar";
 import { getUser } from "../../utilities/users-service";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
-import HomePage from "../HomePage";
+import HomePage from "../HomePage/HomePage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
 
   return (
     <main className="App">
-      {user ? (
+     
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
@@ -29,7 +29,7 @@ export default function App() {
             
           </Routes>
         </>
-      ) : (
+      
         <>
           <Routes>
               <Route path="/signup" element={<SignUpForm />} />
@@ -38,7 +38,7 @@ export default function App() {
             <LoginForm setUser={setUser} />
         </>
         
-      )}
+   
     </main>
   );
 }
