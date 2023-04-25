@@ -25,19 +25,16 @@ export default function App() {
             <Route path="/exercise" element={<ViewExercise />} />
             <Route path="/workout" element={<ViewWorkoutPlan />} />
             <Route path="/" element={<HomePage />} />
-            
-            
           </Routes>
         </>
       ) : (
         <>
           <Routes>
-              <Route path="/signup" element={<SignUpForm />} />
+            <Route path="/signup" element={<SignUpForm />} />
           </Routes>
-          
-            <LoginForm setUser={setUser} />
+
+          <LoginForm setUser={setUser} />
         </>
-        
       )}
     </main>
   );
