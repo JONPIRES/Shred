@@ -9,6 +9,7 @@ import { getUser } from "../../utilities/users-service";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import HomePage from "../HomePage/HomePage";
+import Footer from "../../components/Footer/Footer";
 import ExerciseDetail from "../../components/ViewExercises/ExerciseDetail";
 
 export default function App() {
@@ -28,7 +29,7 @@ export default function App() {
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
           <Route path="/" element={<HomePage />} />
         </Routes>
-
+        <Footer />
         <Routes></Routes>
       </>
     </main>

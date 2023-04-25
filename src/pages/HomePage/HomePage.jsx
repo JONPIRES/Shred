@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "../HomePage/HomePage.css";
+import Footer from "../../components/Footer/Footer";
 
 function HomePage() {
   return (
@@ -33,6 +34,7 @@ function HomePage() {
             SIGN UP
           </button>
         </div>
+
       </div>
     </>
   );
