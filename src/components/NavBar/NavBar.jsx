@@ -15,17 +15,27 @@ export default function NavBar({ user, setUser }) {
 
             <Link to='/' className="text-light link-offset-2 link-offset-3-hover
        link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover navbar-brand">SHRED</Link>
-          
-              <Link to="/create-exercise" className="text-light link-offset-2 link-offset-3-hover
-       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Create Exercise</Link>
 
-              <Link to="/workout" className="text-light link-offset-2 link-offset-3-hover
-       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Workout Plan</Link>
+            <div className="nav-item dropdown ">
+              <Link className="nav-link dropdown-toggle text-light" role="button" data-bs-toggle="dropdown" aria-exapanded="false">
+                Workout Plan </Link>
+              <div className="dropdown-menu">
+                <div><Link className="dropdown-item" to="/workout">My Workout Plan</Link></div>
+                <div><Link className="dropdown-item" to="/">Edit Workout Plan</Link></div>
+              </div>
+            </div>
 
-              <Link to="/exercise" className="text-light link-offset-2 link-offset-3-hover 
-          link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Exercises</Link>
-
-            <div className="nav-item dropdown me-5">
+              
+            <div className="nav-item dropdown ">
+              <Link className="nav-link dropdown-toggle text-light" role="button" data-bs-toggle="dropdown" aria-exapanded="false">
+                Exercises </Link>
+              <div className="dropdown-menu">
+                <div><Link className="dropdown-item " to="/exercise">Available Exercises</Link></div>
+                <div><Link className="dropdown-item " to="/create-exercise">Add Exercise</Link></div>
+              </div>
+            </div>
+           
+            <div className="nav-item dropdown ">
               <Link className="nav-link dropdown-toggle text-light" role="button" data-bs-toggle="dropdown" aria-exapanded="false">
                   {user && user.name} </Link>
               <div className="dropdown-menu">
