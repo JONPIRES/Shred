@@ -6,21 +6,36 @@ export default function NavBar({ user, setUser }) {
     setUser(null);
   }
   return (
-    <nav>
-      <Link to="/">SHRED</Link>
-      &nbsp; | &nbsp;
-      <Link to="/create-exercise">Create Exercise</Link>
-      &nbsp; | &nbsp;
-      <Link to="/workout">Workout Plan</Link>
-      &nbsp; | &nbsp;
-      <Link to="/exercise">Exercises</Link>
-      &nbsp;&nbsp;
+    <div>
+      {user ? (
+        <nav className="navbar bg-dark text-light">
+          <Link to="/create-exercise" className="text-light link-offset-2 link-offset-3-hover
+       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Create Exercise</Link>
 
-      <span>Welcome, {user && user.name} </span>
-      &nbsp;&nbsp;
-      <Link to="" onClick={handleLogout}>
-        Log Out
-      </Link>
-    </nav>
+          &nbsp; | &nbsp;
+          <Link to="/workout" className="text-light link-offset-2 link-offset-3-hover
+       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Workout Plan</Link>
+          &nbsp; | &nbsp;
+          <Link to="/exercise" className="text-light link-offset-2 link-offset-3-hover 
+      link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Exercises</Link>
+          &nbsp; | &nbsp;
+
+          <span className="nav-item dropdown"> {user && user.name} </span>
+          &nbsp; | &nbsp;
+          <Link to="/exercise" onClick={handleLogout} className="text-light link-offset-2 link-offset-3-hover 
+      link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
+            Log Out
+          </Link>
+        </nav>
+      ) : (
+        <nav className="navbar bg-dark text-light">
+          <Link to="/exercise" className="text-light link-offset-2 link-offset-3-hover 
+      link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Exercises</Link>
+
+          <Link to="/login" className="text-light link-offset-2 link-offset-3-hover 
+      link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Login</Link>
+        </nav>)}
+
+    </div>
   );
 }

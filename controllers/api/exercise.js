@@ -9,13 +9,14 @@ module.exports = {
   editExercise,
   deleteExercise,
   viewExercise,
-  exercises,
+  viewExercises,
 };
 
-async function exercises(req, res) {
+async function viewExercises(req, res) {
   try {
     const exercises = await Exercise.find({});
-    res.json(exercises);
+    res.send(exercises);
+    console.log("exercises");
   } catch (err) {
     console.log(err);
     throw new Error("view All exercises controller Error");
