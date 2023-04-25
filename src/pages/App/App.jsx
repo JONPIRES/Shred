@@ -22,6 +22,7 @@ export default function App() {
           <Route path="/create-exercise" element={<ExerciseFrom />} />
           <Route path="/exercise" element={<ViewExercises />} />
           <Route path="/workout" element={<ViewWorkoutPlan />} />
+          {/* <Route path="/exercise/:id" element={<ExerciseDetail/>} /> */}
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
           <Route path="/" element={<HomePage />} />
