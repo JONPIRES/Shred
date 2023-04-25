@@ -7,3 +7,7 @@ export async function create(form) {
 export async function get() {
   return sendRequest(BASE_URL);
 }
+
+export async function detail(exerciseId) {
+  return sendRequest(`${BASE_URL}/detail`, "GET", exerciseId);
+}
