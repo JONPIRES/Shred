@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 // import "./App.css";
 import AuthPage from "../AuthPage/AuthPage";
 import ExerciseFrom from "../../components/ExercisesPage/ExerciseForm";
-import ViewExercise from "../../components/ViewExercises/ViewExercises";
+import ViewExercises from "../../components/ViewExercises/ViewExercises";
 import ViewWorkoutPlan from "../../components/ViewWorkoutPlan/ViewWorkoutPlan";
 import NavBar from "../../components/NavBar/NavBar";
 import { getUser } from "../../utilities/users-service";
@@ -22,7 +22,7 @@ export default function App() {
           <Routes>
             {/* Route components in here */}
             <Route path="/create-exercise" element={<ExerciseFrom />} />
-            <Route path="/exercise" element={<ViewExercise />} />
+            <Route path="/exercise" element={<ViewExercises />} />
             <Route path="/workout" element={<ViewWorkoutPlan />} />
             <Route path="/" element={<HomePage />} />
             

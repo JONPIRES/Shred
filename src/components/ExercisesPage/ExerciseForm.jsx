@@ -32,52 +32,57 @@ const ExerciseForm = () => {
 
   return (
     <div>
-      <div className="form-container">
+      <div className="form-container container">
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>name</label>
+          <label className="form-label">name</label>
           <input
             type="text"
             name="name"
             value={exercise.name}
             onChange={handleChange}
             required
+            className="form-control"
           />
-          <label>Muscle Group</label>
+          <label className="form-label">Muscle Group</label>
           <input
             type="text"
             name="muscleGroup"
             value={exercise.muscleGroup}
             onChange={handleChange}
             required
+            className="form-control"
           />
-          <label>equipment</label>
+          <label className="form-label">equipment</label>
           <input
             type="text"
             name="equipment"
             value={exercise.equipment}
             onChange={handleChange}
             required
+            className="form-control"
           />
-          <label>Image</label>
+          <label className="form-label">Image</label>
           <input
             type="text"
             name="img"
             value={exercise.img}
             onChange={handleChange}
             required
+            className="form-control"
           />
-          <label>Explanation</label>
+          <label className="form-label">Explanation</label>
           <input
             type="text"
             name="explanation"
             value={exercise.explanation}
             onChange={handleChange}
             required
+            className="form-control"
           />
-          <button type="submit">Create Exercise </button>
+          <button type="submit" className="btn btn-dark">Create Exercise </button>
         </form>
       </div>
-      <p className="error-message">&nbsp;{error}</p>
+      <p className="error-message ">&nbsp;{error}</p>
     </div>
   );
 };

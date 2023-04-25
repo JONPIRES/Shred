@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function ViewExercise() {
+function ViewExercises() {
 return(
     <div className="container">
         <p>This is the view exercise page</p>
@@ -10,4 +10,4 @@ return(
 
 }
 
-export default ViewExercise;
+export default ViewExercises;
