@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import "../HomePage/HomePage.css"
+import "../HomePage/HomePage.css";
 
 function HomePage() {
   return (
@@ -26,9 +26,13 @@ function HomePage() {
         </p>
       </div>
       <div>
-        <h2>QUOTE</h2>
+        <h2 className="homepage-quote">QUOTE / SLOGAN</h2>
 
-        <button className="signup-button">SIGN UP</button>
+        <div class="text-center">
+          <button type="button" class="btn btn-primary">
+            SIGN UP
+          </button>
+        </div>
       </div>
     </>
   );

@@ -15,9 +15,9 @@
 *:after {
   box-sizing: border-box;
 }
-
+/* 
 body {
-  margin: 0;
+  margin: 1rem auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -112,13 +112,13 @@ input {
   border-radius: 0.5vmin;
   color: var(--text-dark);
   background-image: none !important; /* prevent lastpass */
-  outline: none;
-}
+  /* outline: none;
+} */
 
-input:focus {
+/* input:focus {
   border-color: var(--orange);
-}
-
+} */
+/* 
 button,
 a.button {
   margin: 1vmin;
@@ -133,14 +133,14 @@ a.button {
   border-radius: 0.5vmin;
   outline: none;
   cursor: pointer;
-}
+} */
 
-button.btn-sm {
+/* button.btn-sm {
   font-size: 1.5vmin;
   padding: 0.6vmin 0.8vmin;
-}
+} */
 
-button.btn-xs {
+/* button.btn-xs {
   font-size: 1vmin;
   padding: 0.4vmin 0.5vmin;
 }
@@ -154,9 +154,9 @@ form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
-}
+}  */
 
-.shred-intro {
+/* .shred-intro {
   display: flex;
   align-items: center;
   margin-bottom: -1px;
@@ -174,4 +174,4 @@ button[type="submit"] {
   border: 2px solid black;
   transform: translateY(8px);
   font-size: 1rem;
-}
+} */

@@ -1,0 +1,32 @@
+/* body {
+    margin: 1rem;
+} */
+
+.shred-intro {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: -1px;
+  }
+  
+  .home-img {
+    height: 7rem;
+    margin-right: 1rem;
+    border: 2px solid #f67f00;
+  }
+  
+  .home-info {
+    height: 7rem;
+    margin-right: 1rem;
+    border: 2px solid black;
+    transform: translateY(8px);
+    font-size: 1rem;
+  }
+
+  .homepage-quote {
+    font-size: 2rem;
+  }
+
+  .btn-primary {
+    margin-bottom: 1rem;
+  }
