@@ -6,9 +6,11 @@ export default function NavBar({ user, setUser }) {
     setUser(null);
   }
   return (
+
     <nav className="navbar bg-dark text-light">
       <Link to="/create-exercise" className="text-light link-offset-2 link-offset-3-hover
        link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Create Exercise</Link>
+
       &nbsp; | &nbsp;
       <Link to="/workout" className="text-light link-offset-2 link-offset-3-hover
        link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Workout Plan</Link>
