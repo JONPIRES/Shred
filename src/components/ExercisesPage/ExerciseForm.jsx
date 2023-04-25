@@ -34,9 +34,9 @@ const ExerciseForm = () => {
 
   return (
     <div>
-      <div className="form-container container">
+      <div className="form-container container mt-5">
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <label className="form-label">name</label>
+          <label className="form-label">Name:</label>
           <input
             type="text"
             name="name"
@@ -45,7 +45,7 @@ const ExerciseForm = () => {
             required
             className="form-control"
           />
-          <label className="form-label">Muscle Group</label>
+          <label className="form-label">Muscle Group:</label>
           <input
             type="text"
             name="muscleGroup"
@@ -54,7 +54,7 @@ const ExerciseForm = () => {
             required
             className="form-control"
           />
-          <label className="form-label">equipment</label>
+          <label className="form-label">Equipment:</label>
           <input
             type="text"
             name="equipment"
@@ -63,7 +63,7 @@ const ExerciseForm = () => {
             required
             className="form-control"
           />
-          <label className="form-label">Image</label>
+          <label className="form-label">Image URL:</label>
           <input
             type="text"
             name="img"
@@ -72,7 +72,7 @@ const ExerciseForm = () => {
             required
             className="form-control"
           />
-          <label className="form-label">Explanation</label>
+          <label className="form-label">Explanation:</label>
           <input
             type="text"
             name="explanation"
@@ -81,7 +81,7 @@ const ExerciseForm = () => {
             required
             className="form-control"
           />
-          <button type="submit" className="btn btn-dark">Create Exercise </button>
+          <button type="submit" className="btn btn-dark mt-2">Create Exercise </button>
         </form>
       </div>
       <p className="error-message ">&nbsp;{error}</p>
