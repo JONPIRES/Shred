@@ -16,29 +16,26 @@ export default function App() {
 
   return (
     <main className="App">
-     
-        <>
-          <NavBar user={user} setUser={setUser} />
-          <Routes>
-            {/* Route components in here */}
-            <Route path="/create-exercise" element={<ExerciseFrom />} />
-            <Route path="/exercise" element={<ViewExercises />} />
-            <Route path="/workout" element={<ViewWorkoutPlan />} />
-            <Route path="/" element={<HomePage />} />
-            
-            
-          </Routes>
-        </>
-      
-        <>
-          <Routes>
-              <Route path="/signup" element={<SignUpForm />} />
-          </Routes>
-          
-            <LoginForm setUser={setUser} />
-        </>
-        
-   
+
+      <>
+        <NavBar user={user} setUser={setUser}/>
+        <Routes>
+          {/* Route components in here */}
+          <Route path="/create-exercise" element={<ExerciseFrom />} />
+          <Route path="/exercise" element={<ViewExercises />} />
+          <Route path="/workout" element={<ViewWorkoutPlan />} />
+          <Route path="/signup" element={<SignUpForm />} />
+          <Route path="/login" element={<LoginForm setUser={setUser}/>} />
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+
+        <Routes>
+        </Routes>
+
+
+      </>
+
+
     </main>
   );
 }
