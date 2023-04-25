@@ -6,36 +6,50 @@ export default function NavBar({ user, setUser }) {
     setUser(null);
   }
   return (
-    <div>
+    <div className="">
       {user ? (
-        <nav className="navbar bg-dark text-light">
-          <Link to="/create-exercise" className="text-light link-offset-2 link-offset-3-hover
+
+        <nav className="navbar navbar-expand-lg bg-dark ">
+          
+          <div className="container-fluid d-flex justify-content-around">
+
+            <Link to='/' className="text-light link-offset-2 link-offset-3-hover
+       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover navbar-brand">SHRED</Link>
+          
+              <Link to="/create-exercise" className="text-light link-offset-2 link-offset-3-hover
        link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Create Exercise</Link>
 
-          &nbsp; | &nbsp;
-          <Link to="/workout" className="text-light link-offset-2 link-offset-3-hover
+              <Link to="/workout" className="text-light link-offset-2 link-offset-3-hover
        link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Workout Plan</Link>
-          &nbsp; | &nbsp;
-          <Link to="/exercise" className="text-light link-offset-2 link-offset-3-hover 
-      link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Exercises</Link>
-          &nbsp; | &nbsp;
 
-          <span className="nav-item dropdown"> {user && user.name} </span>
-          &nbsp; | &nbsp;
-          <Link to="/exercise" onClick={handleLogout} className="text-light link-offset-2 link-offset-3-hover 
-      link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
-            Log Out
-          </Link>
+              <Link to="/exercise" className="text-light link-offset-2 link-offset-3-hover 
+          link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Exercises</Link>
+
+            <div className="nav-item dropdown me-5">
+              <Link className="nav-link dropdown-toggle text-light" role="button" data-bs-toggle="dropdown" aria-exapanded="false">
+                  {user && user.name} </Link>
+              <div className="dropdown-menu">
+                <div><Link className="dropdown-item " onClick={handleLogout} to="/login">Logout</Link></div>
+                </div>
+              </div>
+            
+          </div>
+
         </nav>
       ) : (
-        <nav className="navbar bg-dark text-light">
-          <Link to="/exercise" className="text-light link-offset-2 link-offset-3-hover 
+        <nav className="navbar navbar-expand-lg bg-dark">
+          <div className="container-fluid">
+            <Link to='/' className="text-light link-offset-2 link-offset-3-hover
+       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover navbar-brand">SHRED</Link>
+            <Link to="/exercise" className="text-light link-offset-2 link-offset-3-hover 
       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Exercises</Link>
 
-          <Link to="/login" className="text-light link-offset-2 link-offset-3-hover 
+            <Link to="/login" className="text-light link-offset-2 link-offset-3-hover 
       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Login</Link>
-        </nav>)}
+          </div>
+        </nav>)
+      }
 
-    </div>
+    </div >
   );
 }
