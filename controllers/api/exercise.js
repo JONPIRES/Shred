@@ -10,9 +10,21 @@ module.exports = {
   deleteExercise,
   viewExercise,
   viewExercises,
+  exerciseDetail,
 };
 
 async function viewExercises(req, res) {
+  try {
+    const exercises = await Exercise.findById({});
+    res.send(exercises);
+    console.log("exercises");
+  } catch (err) {
+    console.log(err);
+    throw new Error("view All exercises controller Error");
+  }
+}
+
+async function exerciseDetail(req, res) {
   try {
     const exercises = await Exercise.find({});
     res.send(exercises);
