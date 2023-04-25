@@ -9,5 +9,5 @@ export async function get() {
 }
 
 export async function detail(exerciseId) {
-  return sendRequest(`${BASE_URL}/detail`, "GET", exerciseId);
+  return sendRequest(`${BASE_URL}/detail/${exerciseId}`);
 }

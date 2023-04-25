@@ -4,7 +4,7 @@ const exerciseCtrl = require("../../controllers/api/exercise");
 
 router.get("/", exerciseCtrl.viewExercises);
 
-router.get("/detail", exerciseCtrl.exerciseDetail);
+router.get("/detail/:id", exerciseCtrl.exerciseDetail);
 
 router.post("/create-exercise", exerciseCtrl.createExercise);
 
