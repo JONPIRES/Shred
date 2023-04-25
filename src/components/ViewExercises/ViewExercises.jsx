@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as exercisesAPI from "../../utilities/exercises-api";
+import "./ViewExercises.css";
 
 const ExerciseList = () => {
   const [exercises, setExercises] = useState([]);
