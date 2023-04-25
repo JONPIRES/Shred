@@ -26,9 +26,8 @@ function HomePage() {
         </p>
       </div>
       <div>
-        <h2>QUOTE</h2>
+        <h2 className="homepage-quote">QUOTE</h2>
 
-        <button className="signup-button">SIGN UP</button>
       </div>
     </>
   );
