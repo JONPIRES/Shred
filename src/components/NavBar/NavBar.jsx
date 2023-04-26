@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
+import '../NavBar/navbar.css'
 export default function NavBar({ user, setUser }) {
   function handleLogout() {
     userService.logout();
     setUser(null);
   }
   return (
-    <div className="">
+    <div className="custom-navbar">
       {user ? (
 
         <nav className="navbar navbar-expand-lg bg-dark ">
@@ -14,7 +15,7 @@ export default function NavBar({ user, setUser }) {
           <div className="container-fluid d-flex justify-content-around">
 
             <Link to='/' className="text-light link-offset-2 link-offset-3-hover
-       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover navbar-brand">SHRED</Link>
+       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover navbar-brand navbar-heading">SHRED</Link>
 
             <div className="nav-item dropdown ">
               <Link className="nav-link dropdown-toggle text-light" role="button" data-bs-toggle="dropdown" aria-exapanded="false">

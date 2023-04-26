@@ -33,8 +33,8 @@ export default function LoginForm({ setUser }) {
   }
 
   return (
-    <div className="container">
-      <div className="form-container">
+    <div className="container container-fluid " style={{ minHeight: '100vh', height: 'auto', marginTop: '10em' }}>
+      <div className="container">
         <form autoComplete="off" onSubmit={handleSubmit}>
           <label className="form-label">Email</label>
           <input
@@ -54,8 +54,8 @@ export default function LoginForm({ setUser }) {
             required
             className="form-control"
           />
-          <button type="submit" className="btn btn-dark">LOG IN</button>
-          <button className="btn btn-dark"><Link className="text-light link-underline-opacity-0" to="/signup"> Sign Up</Link></button>
+          <button type="submit" className="btn btn-dark " style={{marginRight:"1.5em", marginTop:'2em'}}>LOG IN</button>
+          <Link className="text-light link-underline-opacity-0 btn btn-dark " to="/signup" style={{ marginTop: '2em' }}> SIGN UP</Link>
         </form>
        
       </div>

@@ -34,7 +34,7 @@ const ExerciseForm = () => {
 
   return (
     <div>
-      <div className="form-container container mt-5">
+      <div className="form-container container mt-5" style={{minHeight:'100vh', height:'auto'}}>
         <form autoComplete="off" onSubmit={handleSubmit}>
           <label className="form-label">Name:</label>
           <input

@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Rubik+Pixels&display=swap');
+
+.custom-navbar .navbar-heading{
+    font-family: 'Rubik Moonrocks', cursive;
+        font-family: 'Rubik Pixels', cursive;
+        font-size:2em;
+}

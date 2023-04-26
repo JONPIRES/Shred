@@ -1,6 +1,10 @@
 /* body {
     margin: 1rem;
 } */
+.homepage{
+  min-height:100vh;
+  height:auto;
+}
 
 .shred-intro {
     margin: 1rem;
