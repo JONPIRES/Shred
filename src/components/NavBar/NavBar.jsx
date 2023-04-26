@@ -48,10 +48,10 @@ export default function NavBar({ user, setUser }) {
 
         </nav>
       ) : (
-        <nav className="navbar navbar-expand-lg bg-dark">
-          <div className="container-fluid">
+          <nav className="navbar navbar-expand-lg bg-dark" style={{ height: '3em' }}>
+            <div className="container-fluid d-flex justify-content-around">
             <Link to='/' className="text-light link-offset-2 link-offset-3-hover
-       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover navbar-brand">SHRED</Link>
+       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover navbar-brand navbar-heading">SHRED</Link>
             <Link to="/exercise" className="text-light link-offset-2 link-offset-3-hover 
       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">Exercises</Link>
 
