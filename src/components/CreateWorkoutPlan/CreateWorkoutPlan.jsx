@@ -4,9 +4,12 @@ async function handleSubmit(e) {
     e.prevent.default()
 }
 
+async function handleChange(e) {
+    
+}
 
 
-function EditWorkoutPlan() {
+function CreateWorkoutPlan() {
     return (
         <div className="edit-workout-plan" style={{ minHeight: '100vh', height: 'auto' }}>
             <div className="container container-fluid">
@@ -48,11 +51,11 @@ function EditWorkoutPlan() {
                     />
                     <button type="submit" className="btn btn-dark mt-2">Create Workout Plan </button>
                 </form>
-                <p className="error-message ">&nbsp;{error}</p>
+               
             </div>
         </div>
 
     )
 }
 
-export default EditWorkoutPlan;
+export default CreateWorkoutPlan;
