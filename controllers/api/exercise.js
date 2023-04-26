@@ -29,7 +29,6 @@ async function exerciseDetail(req, res) {
     console.log(req.params.id);
     const exercise = await Exercise.findById(req.params.id);
     res.send(exercise);
-    console.log("exercises");
   } catch (err) {
     console.log(err);
     throw new Error("exercise detail controller Error");
@@ -65,6 +64,7 @@ async function editExercise(req, res) {
 
 async function deleteExercise(req, res) {
   try {
+    console.log("route was hit");
     await Exercise.findByIdAndDelete(req.params.id);
   } catch (error) {
     console.log(error);
