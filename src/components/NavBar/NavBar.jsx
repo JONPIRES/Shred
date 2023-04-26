@@ -7,10 +7,10 @@ export default function NavBar({ user, setUser }) {
     setUser(null);
   }
   return (
-    <div className="custom-navbar">
+    <div className="custom-navbar" >
       {user ? (
 
-        <nav className="navbar navbar-expand-lg bg-dark ">
+        <nav className="navbar navbar-expand-lg bg-dark " style={{ height: '3em' }}>
           
           <div className="container-fluid d-flex justify-content-around">
 
