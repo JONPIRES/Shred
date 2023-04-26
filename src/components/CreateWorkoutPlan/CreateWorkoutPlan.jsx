@@ -13,7 +13,7 @@ function CreateWorkoutPlan() {
     return (
         <div className="edit-workout-plan" style={{ minHeight: '100vh', height: 'auto' }}>
             <div className="container container-fluid">
-                <h1 className="mt-3 text-center">Edit Workout Plan</h1>
+                <h1 className="mt-3 text-center">Create Workout Plan</h1>
                 <form autoComplete="off" onSubmit={handleSubmit}>
                     <label className="form-label">Name:</label>
                     <input
