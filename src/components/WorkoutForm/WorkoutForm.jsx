@@ -2,10 +2,11 @@ import React from "react";
 import CreateWorkoutPlan from "../CreateWorkoutPlan/CreateWorkoutPlan";
 
 function WorkoutForm() {
-<div className="WorkoutForm">
-    <CreateWorkoutPlan /> 
-
-</div>
+    return (
+        <div className="WorkoutForm">
+            <CreateWorkoutPlan />
+        </div>
+    )
 
 }
 
