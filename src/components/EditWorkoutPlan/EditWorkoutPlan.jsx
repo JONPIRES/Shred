@@ -20,7 +20,7 @@ function EditWorkoutPlan() {
                         required
                         className="form-control"
                     />
-                    <label className="form-label">Muscle Group:</label>
+                    <label className="form-label">Goals:</label>
                     <input
                         type="text"
                         name="muscleGroup"
@@ -28,9 +28,9 @@ function EditWorkoutPlan() {
                         required
                         className="form-control"
                     />
-                    <label className="form-label">Equipment:</label>
+                    <label className="form-label">Cycle:</label>
                     <input
-                        type="text"
+                        type="number"
                         name="equipment"
                         onChange={handleChange}
                         required
@@ -38,7 +38,7 @@ function EditWorkoutPlan() {
                     />
 
 
-                    <label className="form-label">Explanation:</label>
+                    <label className="form-label">Exercise:</label>
                     <input
                         type="text"
                         name="explanation"
@@ -46,7 +46,7 @@ function EditWorkoutPlan() {
                         required
                         className="form-control"
                     />
-                    <button type="submit" className="btn btn-dark mt-2">Create Exercise </button>
+                    <button type="submit" className="btn btn-dark mt-2">Create Workout Plan </button>
                 </form>
                 <p className="error-message ">&nbsp;{error}</p>
             </div>
