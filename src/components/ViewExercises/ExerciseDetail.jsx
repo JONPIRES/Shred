@@ -11,6 +11,7 @@ const ExerciseDetail = () => {
     img: "",
     explanation: "",
   });
+  
   const { id } = useParams();
 
   async function handleSubmit(e) {
