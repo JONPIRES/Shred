@@ -1,11 +1,10 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
 import "../HomePage/HomePage.css";
-import Footer from "../../components/Footer/Footer";
+
 
 function HomePage() {
   return (
-    <>
+    <div className="homepage container-fluid container">
       <div className="shred-intro">
         <p className="home-info">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -29,14 +28,14 @@ function HomePage() {
       <div>
         <h2 className="homepage-quote">QUOTE / SLOGAN</h2>
 
-        <div class="text-center">
-          <button type="button" class="btn btn-primary">
+        <div className="text-center">
+          <button type="button" className="btn btn-primary">
             SIGN UP
           </button>
         </div>
 
       </div>
-    </>
+    </div>
   );
 }
 export default HomePage;

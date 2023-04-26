@@ -38,8 +38,8 @@ export default class SignUpForm extends Component {
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
-      <div>
-        <div className="form-container container">
+      <div style={{ minHeight: '100vh', height: 'auto', marginTop:'10em'}} className=" container container-fluid">
+        <div className="container-fluid container ">
           <form autoComplete="off" onSubmit={this.handleSubmit}>
             <label className="form-label">Name</label>
             <input
@@ -77,7 +77,7 @@ export default class SignUpForm extends Component {
               required
               className="form-control"
             />
-            <button type="submit" disabled={disable} className="btn btn-dark">
+            <button type="submit" disabled={disable} className="btn btn-dark mt-3" >
               SIGN UP
             </button>
           </form>

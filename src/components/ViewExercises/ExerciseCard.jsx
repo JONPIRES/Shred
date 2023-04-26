@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 const ExerciseCard = ({ key, img, name, muscle, equipment, id }) => {
   return (
-    <div className="col-lg-4 mb-4">
+    <div className="col-lg-4 col-md-6 mb-4" >
       <div className="card">
         <div className="text-center">
           <img
             src={img}
             alt="exercise img"
-            className="card-img-top"
-            style={{ height: `25em`, width: `25em` }}
+            className="card-img-top img-fluid"
+            style={{ height: `20em`, width: `20em` }}
           />
         </div>
         <div className="card-body">

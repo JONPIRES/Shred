@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-// import "./App.css";
+import "./App.css";
 import ExerciseFrom from "../../components/ExercisesPage/ExerciseForm";
 import ViewExercises from "../../components/ViewExercises/ViewExercises";
 import ViewWorkoutPlan from "../../components/ViewWorkoutPlan/ViewWorkoutPlan";
@@ -30,7 +30,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
         </Routes>
         <Footer />
-        <Routes></Routes>
+        
       </>
     </main>
   );
