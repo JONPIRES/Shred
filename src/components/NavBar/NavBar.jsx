@@ -11,7 +11,7 @@ export default function NavBar({ user, setUser }) {
       {user ? (
 
         <nav className="navbar navbar-expand-lg bg-dark " style={{ height: '3em' }}>
-          
+
           <div className="container-fluid d-flex justify-content-around">
 
             <Link to='/' className="text-light link-offset-2 link-offset-3-hover
@@ -22,11 +22,11 @@ export default function NavBar({ user, setUser }) {
                 Workout Plan </Link>
               <div className="dropdown-menu">
                 <div><Link className="dropdown-item" to="/workout">My Workout Plan</Link></div>
-                <div><Link className="dropdown-item" to="/">Edit Workout Plan</Link></div>
+                <div><Link className="dropdown-item" to="/workout/create">Edit Workout Plan</Link></div>
               </div>
             </div>
 
-              
+
             <div className="nav-item dropdown ">
               <Link className="nav-link dropdown-toggle text-light" role="button" data-bs-toggle="dropdown" aria-exapanded="false">
                 Exercises </Link>
@@ -35,21 +35,21 @@ export default function NavBar({ user, setUser }) {
                 <div><Link className="dropdown-item " to="/create-exercise">Add Exercise</Link></div>
               </div>
             </div>
-           
+
             <div className="nav-item dropdown ">
               <Link className="nav-link dropdown-toggle text-light" role="button" data-bs-toggle="dropdown" aria-exapanded="false">
-                  {user && user.name} </Link>
+                {user && user.name} </Link>
               <div className="dropdown-menu">
                 <div><Link className="dropdown-item " onClick={handleLogout} to="/login">Logout</Link></div>
-                </div>
               </div>
-            
+            </div>
+
           </div>
 
         </nav>
       ) : (
-          <nav className="navbar navbar-expand-lg bg-dark" style={{ height: '3em' }}>
-            <div className="container-fluid d-flex justify-content-around">
+        <nav className="navbar navbar-expand-lg bg-dark" style={{ height: '3em' }}>
+          <div className="container-fluid d-flex justify-content-around">
             <Link to='/' className="text-light link-offset-2 link-offset-3-hover
        link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover navbar-brand navbar-heading">SHRED</Link>
             <Link to="/exercise" className="text-light link-offset-2 link-offset-3-hover 
