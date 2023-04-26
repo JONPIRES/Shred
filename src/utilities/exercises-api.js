@@ -15,3 +15,7 @@ export async function detail(exerciseId) {
 export async function deleteExercise(exerciseId) {
   return sendRequest(`${BASE_URL}/delete-exercise/${exerciseId}`, "POST");
 }
+
+export async function update(form) {
+  return sendRequest(`${BASE_URL}/edit-exercise/${form._id}`, "PUT", form);
+}
