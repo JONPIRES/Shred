@@ -11,6 +11,7 @@ import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import HomePage from "../HomePage/HomePage";
 import Footer from "../../components/Footer/Footer";
 import ExerciseDetail from "../../components/ViewExercises/ExerciseDetail";
+import UpdateExercise from "../../components/ViewExercises/UpdateExercise";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -25,12 +26,12 @@ export default function App() {
           <Route path="/exercise" element={<ViewExercises />} />
           <Route path="/workout" element={<ViewWorkoutPlan />} />
           <Route path="/exercise/:id" element={<ExerciseDetail />} />
+          <Route path="/update/:id" element={<UpdateExercise />} />
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
           <Route path="/" element={<HomePage />} />
         </Routes>
         <Footer />
-        
       </>
     </main>
   );

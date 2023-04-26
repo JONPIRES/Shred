@@ -55,7 +55,8 @@ async function createExercise(req, res) {
 
 async function editExercise(req, res) {
   try {
-    await Exercise.findByIdAndUpdate(req.body);
+    console.log("something");
+    await Exercise.findByIdAndUpdate(req.params.id, req.body);
   } catch (error) {
     console.log(error);
     throw new Error("Edit Exercise Error");
