@@ -1,6 +1,25 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const ExerciseSchema = new Schema({
+  exercise: {
+    type: Schema.Types.ObjectId,
+    ref: "Exercises",
+  },
+  sets: {
+    type: Number,
+  },
+  reps: {
+    type: Number,
+  },
+  duration: {
+    type: Number,
+  },
+  notes: {
+    type: String,
+  },
+});
+
 const planSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
@@ -18,28 +37,7 @@ const planSchema = new Schema({
   cycle: {
     type: Number,
   },
-  exercise: {
-    exercises: [
-      {
-        exercise: {
-          type: Schema.Types.ObjectId,
-          ref: "Exercises",
-        },
-        sets: {
-          type: Number,
-        },
-        reps: {
-          type: Number,
-        },
-        duration: {
-          type: Number,
-        },
-        notes: {
-          type: String,
-        },
-      },
-    ],
-  },
+  exercise: [ExerciseSchema],
 });
 
 const Plan = mongoose.model("Plan", planSchema);
