@@ -17,7 +17,9 @@ function CreateWorkoutPlan({ user }) {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
+      console.log(plan);
       await planAPI.create(plan);
+      setPlan(plan);
     } catch (err) {
       console.log(err);
       setError("Create Plan Failed - Try Again");
@@ -49,7 +51,7 @@ function CreateWorkoutPlan({ user }) {
           />
 
           <button type="submit" className="btn btn-dark mt-2">
-            Create Workout Plan{" "}
+            Create Workout Plan
           </button>
         </form>
       </div>

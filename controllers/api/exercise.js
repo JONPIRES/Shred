@@ -42,7 +42,8 @@ async function viewExercise(req, res) {
 
 async function createExercise(req, res) {
   try {
-    await Exercise.create(req.body);
+    console.log(req.body);
+    const exercise = await Exercise.create(req.body);
   } catch (error) {
     console.log(error);
     throw new Error("Create Exercise Error");
