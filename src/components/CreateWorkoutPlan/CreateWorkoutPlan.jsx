@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import * as planAPI from "../../utilities/exercises-api";
+import * as planAPI from "../../utilities/plan-api";
 
-function CreateWorkoutPlan() {
+function CreateWorkoutPlan({ user }) {
   const [plan, setPlan] = useState({
-    user: "",
+    user: user._id,
     name: "",
     goals: "",
-    cycle: "",
   });
   const [error, setError] = useState("");
 
@@ -16,9 +15,9 @@ function CreateWorkoutPlan() {
   }
 
   async function handleSubmit(e) {
-    e.prevent.default();
+    e.preventDefault();
     try {
-      await planAPI.create();
+      await planAPI.create(plan);
     } catch (err) {
       console.log(err);
       setError("Create Plan Failed - Try Again");
@@ -43,15 +42,7 @@ function CreateWorkoutPlan() {
           <label className="form-label">Goals:</label>
           <input
             type="text"
-            name="muscleGroup"
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-          <label className="form-label">Cycle:</label>
-          <input
-            type="number"
-            name="equipment"
+            name="goals"
             onChange={handleChange}
             required
             className="form-control"

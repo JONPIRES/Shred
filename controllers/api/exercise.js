@@ -11,9 +11,9 @@ module.exports = {
 
 async function viewExercises(req, res) {
   try {
+    console.log("controller here");
     const exercises = await Exercise.find({});
     res.send(exercises);
-    console.log("exercises");
   } catch (err) {
     console.log(err);
     throw new Error("view All exercises controller Error");

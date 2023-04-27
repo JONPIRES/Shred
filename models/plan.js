@@ -36,6 +36,7 @@ const planSchema = new Schema({
   },
   cycle: {
     type: Number,
+    default: 0,
   },
   exercise: [ExerciseSchema],
 });
