@@ -30,8 +30,13 @@ function ViewWorkoutPlan() {
                 </div>
                 <div className="col-lg-9 container">
                     <div className="text-center mt-5 " >
+                        
                         <h1>Name Of Workout</h1>
                         <hr />
+                    </div>
+                    <div className="text-center">
+                        <Link to="workout/:id/add-exercise" className="text-center link-offset-2 link-offset-2-hover
+       link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover text-dark">Add exercise</Link>
                     </div>
                     <div className="">
                         <p>Exercise Name</p>

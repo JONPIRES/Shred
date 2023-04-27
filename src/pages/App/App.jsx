@@ -33,10 +33,12 @@ export default function App() {
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
           <Route path="/" element={<HomePage />} />
+
           <Route
             path="/workout/:id/add-exercise"
             element={<AddExerciseToWorkoutPlan />}
           />
+
         </Routes>
         <Footer />
       </>
