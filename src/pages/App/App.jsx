@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import ExerciseFrom from "../../components/ExercisesPage/ExerciseForm";
 import ViewExercises from "../../components/ViewExercises/ViewExercises";
@@ -29,7 +29,10 @@ export default function App() {
           <Route path="/workout" element={<ViewWorkoutPlan />} />
           <Route path="/exercise/:id" element={<ExerciseDetail />} />
           <Route path="/update/:id" element={<UpdateExercise />} />
-          <Route path="/workout/create" element={<CreateWorkoutPlan />} />
+          <Route
+            path="/workout/create"
+            element={<CreateWorkoutPlan user={user} />}
+          />
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
           <Route path="/" element={<HomePage />} />
