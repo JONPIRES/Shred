@@ -11,8 +11,10 @@ import HomePage from "../HomePage/HomePage";
 import Footer from "../../components/Footer/Footer";
 import ExerciseDetail from "../../components/ViewExercises/ExerciseDetail";
 import UpdateExercise from "../../components/ViewExercises/UpdateExercise";
-import WorkoutForm from "../../components/WorkoutForm/WorkoutForm";
 import CreateWorkoutPlan from "../../components/CreateWorkoutPlan/CreateWorkoutPlan";
+import ViewWorkoutPlan from "../../components/ViewWorkoutPlan/ViewWorkoutPlan";
+
+
 export default function App() {
   const [user, setUser] = useState(getUser());
 
@@ -24,10 +26,10 @@ export default function App() {
           {/* Route components in here */}
           <Route path="/create-exercise" element={<ExerciseFrom />} />
           <Route path="/exercise" element={<ViewExercises />} />
-          <Route path="/workout" element={<CreateWorkoutPlan />} />
+          <Route path="/workout" element={<ViewWorkoutPlan/>} />
           <Route path="/exercise/:id" element={<ExerciseDetail />} />
           <Route path="/update/:id" element={<UpdateExercise />} />
-          <Route path="/workout/create" element={<WorkoutForm />}></Route>
+          <Route path="/workout/create" element={<CreateWorkoutPlan />}></Route>
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
           <Route path="/" element={<HomePage />} />
