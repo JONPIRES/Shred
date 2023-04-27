@@ -19,6 +19,7 @@ export default class SignUpForm extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
+    window.location.replace('/login')
     try {
       const { name, email, password } = this.state;
       const formData = { name, email, password };
