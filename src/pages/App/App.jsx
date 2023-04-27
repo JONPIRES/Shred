@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import {BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import ExerciseFrom from "../../components/ExercisesPage/ExerciseForm";
 import ViewExercises from "../../components/ViewExercises/ViewExercises";
@@ -13,6 +13,8 @@ import ExerciseDetail from "../../components/ViewExercises/ExerciseDetail";
 import UpdateExercise from "../../components/ViewExercises/UpdateExercise";
 import CreateWorkoutPlan from "../../components/CreateWorkoutPlan/CreateWorkoutPlan";
 import ViewWorkoutPlan from "../../components/ViewWorkoutPlan/ViewWorkoutPlan";
+import AddExerciseToWorkoutPlan from "../../components/addExerciseToWorkoutForm/AddExerciseToWorkoutForm";
+
 
 
 export default function App() {
@@ -33,6 +35,7 @@ export default function App() {
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
           <Route path="/" element={<HomePage />} />
+          <Routes path="/workout/:id/add-exercise" element={<AddExerciseToWorkoutPlan/>}></Routes>
         </Routes>
         <Footer />
       </>
