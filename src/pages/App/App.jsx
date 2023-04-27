@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import ExerciseFrom from "../../components/ExercisesPage/ExerciseForm";
 import ViewExercises from "../../components/ViewExercises/ViewExercises";
@@ -15,8 +15,6 @@ import CreateWorkoutPlan from "../../components/CreateWorkoutPlan/CreateWorkoutP
 import ViewWorkoutPlan from "../../components/ViewWorkoutPlan/ViewWorkoutPlan";
 import AddExerciseToWorkoutPlan from "../../components/addExerciseToWorkoutForm/AddExerciseToWorkoutForm";
 
-
-
 export default function App() {
   const [user, setUser] = useState(getUser());
 
@@ -28,14 +26,17 @@ export default function App() {
           {/* Route components in here */}
           <Route path="/create-exercise" element={<ExerciseFrom />} />
           <Route path="/exercise" element={<ViewExercises />} />
-          <Route path="/workout" element={<ViewWorkoutPlan/>} />
+          <Route path="/workout" element={<ViewWorkoutPlan />} />
           <Route path="/exercise/:id" element={<ExerciseDetail />} />
           <Route path="/update/:id" element={<UpdateExercise />} />
-          <Route path="/workout/create" element={<CreateWorkoutPlan />}></Route>
+          <Route path="/workout/create" element={<CreateWorkoutPlan />} />
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
           <Route path="/" element={<HomePage />} />
-          <Routes path="/workout/:id/add-exercise" element={<AddExerciseToWorkoutPlan/>}></Routes>
+          <Route
+            path="/workout/:id/add-exercise"
+            element={<AddExerciseToWorkoutPlan />}
+          />
         </Routes>
         <Footer />
       </>

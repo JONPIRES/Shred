@@ -2,26 +2,6 @@ import React, { useState, useEffect } from "react";
 import * as exercisesAPI from "../../utilities/exercises-api";
 
 function CreateWorkoutPlan() {
-  // Items within the red dots are to go into the workout detail component
-
-  //     const [exerceise, setExercise] = useState([{
-  //         exercise:'',
-  //         sets:'',
-  //         reps:'',
-  //         duration:'',
-  //         notes:''
-  //     }])
-
-  //   const [exercises, setExercises] = useState([]);
-
-  //   useEffect(() => {
-  //     async function fetchExercises() {
-  //       const exercises = await exercisesAPI.get();
-  //       setExercises(exercises);
-  //     }
-  //     fetchExercises();
-  //   }, []);
-
   async function handleSubmit(e) {
     e.prevent.default();
   }
@@ -55,49 +35,6 @@ function CreateWorkoutPlan() {
           <input
             type="number"
             name="equipment"
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-          <br />
-          <h1>Exercises</h1>
-          <br />
-          <label className="form-label">Exercise</label>
-          <input
-            type="text"
-            name="exercise[0].exercise"
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-          <label className="form-label">Sets</label>
-          <input
-            type="text"
-            name="exercise[0].sets"
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-          <label className="form-label">Reps</label>
-          <input
-            type="text"
-            name="exercise[0].reps"
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-          <label className="form-label">Duration</label>
-          <input
-            type="text"
-            name="exercise[0].duration"
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-          <label className="form-label">Notes</label>
-          <input
-            type="text"
-            name="exercise[0].notes"
             onChange={handleChange}
             required
             className="form-control"
