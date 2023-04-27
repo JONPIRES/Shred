@@ -11,8 +11,8 @@ module.exports = {
 
 async function viewPlans(req, res) {
   try {
-    const exercises = await Exercise.find({});
-    res.send(exercises);
+    const plans = await Plan.find({});
+    res.send(plans);
     console.log("exercises");
   } catch (err) {
     console.log(err);

@@ -19,7 +19,6 @@ function CreateWorkoutPlan({ user }) {
     try {
       console.log(plan);
       await planAPI.create(plan);
-      setPlan(plan);
     } catch (err) {
       console.log(err);
       setError("Create Plan Failed - Try Again");
