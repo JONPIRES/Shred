@@ -1,12 +1,29 @@
-import React, { useState, useEffect } from "react";
-import * as exercisesAPI from "../../utilities/exercises-api";
+import React, { useState } from "react";
+import * as planAPI from "../../utilities/exercises-api";
 
 function CreateWorkoutPlan() {
-  async function handleSubmit(e) {
-    e.prevent.default();
+  const [plan, setPlan] = useState({
+    user: "",
+    name: "",
+    goals: "",
+    cycle: "",
+  });
+  const [error, setError] = useState("");
+
+  function handleChange(e) {
+    setPlan({ ...plan, [e.target.name]: e.target.value });
+    setError("");
   }
 
-  async function handleChange(e) {}
+  async function handleSubmit(e) {
+    e.prevent.default();
+    try {
+      await planAPI.create();
+    } catch (err) {
+      console.log(err);
+      setError("Create Plan Failed - Try Again");
+    }
+  }
 
   return (
     <div

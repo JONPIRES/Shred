@@ -1,15 +1,15 @@
-const { Exercise } = require("../../models");
+const { Plan } = require("../../models");
 
 module.exports = {
-  createExercise,
-  editExercise,
-  deleteExercise,
-  viewExercise,
-  viewExercises,
-  exerciseDetail,
+  createPlan,
+  editPlan,
+  deletePlan,
+  viewPlan,
+  viewPlans,
+  planDetail,
 };
 
-async function viewExercises(req, res) {
+async function viewPlans(req, res) {
   try {
     const exercises = await Exercise.find({});
     res.send(exercises);
@@ -20,7 +20,7 @@ async function viewExercises(req, res) {
   }
 }
 
-async function exerciseDetail(req, res) {
+async function planDetail(req, res) {
   try {
     console.log(req.params.id);
     const exercise = await Exercise.findById(req.params.id);
@@ -31,25 +31,25 @@ async function exerciseDetail(req, res) {
   }
 }
 
-async function viewExercise(req, res) {
+async function viewPlan(req, res) {
   try {
-    await Exercise.findById(req.params.id);
+    const showExercise = await Exercise.findById(req.params.id);
   } catch (error) {
     console.log(error);
     throw new Error("View Exercise Error");
   }
 }
 
-async function createExercise(req, res) {
+async function createPlan(req, res) {
   try {
-    await Exercise.create(req.body);
+    await Plan.create(req.body);
   } catch (error) {
     console.log(error);
     throw new Error("Create Exercise Error");
   }
 }
 
-async function editExercise(req, res) {
+async function editPlan(req, res) {
   try {
     console.log("something");
     await Exercise.findByIdAndUpdate(req.params.id, req.body);
@@ -59,7 +59,7 @@ async function editExercise(req, res) {
   }
 }
 
-async function deleteExercise(req, res) {
+async function deletePlan(req, res) {
   try {
     console.log("route was hit");
     await Exercise.findByIdAndDelete(req.params.id);
