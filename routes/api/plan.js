@@ -7,10 +7,10 @@ router.get("/", planCtrl.viewPlan);
 
 router.get("/detail/:id", planCtrl.planDetail);
 
-router.post("/create-plan", ensureLoggedIn, planCtrl.createPlan);
+router.post("/create-plan", planCtrl.createPlan);
 
-router.put("/edit-plan/:id", ensureLoggedIn, planCtrl.editPlan);
+router.put("/edit-plan/:id", planCtrl.editPlan);
 
-router.post("/delete-plan/:id", ensureLoggedIn, planCtrl.deletePlan);
+router.post("/delete-plan/:id", planCtrl.deletePlan);
 
 module.exports = router;

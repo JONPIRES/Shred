@@ -42,7 +42,6 @@ async function viewPlan(req, res) {
 
 async function createPlan(req, res) {
   try {
-    console.log(req.body);
     await Plan.create(req.body);
   } catch (error) {
     console.log(error);

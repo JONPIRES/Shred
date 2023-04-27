@@ -23,18 +23,18 @@ const ExerciseForm = () => {
     e.preventDefault();
     window.location.replace("/exercise");
     try {
-      // this still needs to be created
       await ExerciseService.create(exercise);
-
-      //   setExercise(newExercise);
-    } catch {
+    } catch (err) {
+      console.log(err);
       setError("Create Exercise Failed - Try Again");
     }
   }
 
   return (
     <div>
-      <div className="form-container container mt-5" style={{minHeight:'100vh', height:'auto'}}>
+      <div
+        className="form-container container mt-5"
+        style={{ minHeight: "100vh", height: "auto" }}>
         <form autoComplete="off" onSubmit={handleSubmit}>
           <label className="form-label">Name:</label>
           <input
@@ -81,7 +81,9 @@ const ExerciseForm = () => {
             required
             className="form-control"
           />
-          <button type="submit" className="btn btn-dark mt-2">Create Exercise </button>
+          <button type="submit" className="btn btn-dark mt-2">
+            Create Exercise{" "}
+          </button>
         </form>
       </div>
       <p className="error-message ">&nbsp;{error}</p>
