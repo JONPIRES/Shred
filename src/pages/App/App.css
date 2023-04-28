@@ -4,9 +4,22 @@
 .App {
   min-height:100vh;
   height:auto;
+  color:black;
   font-family: 'Khand', sans-serif;
   font-size:20px;
 }
+
+/* .App::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background-image: url("https://wallpapers.com/images/hd/barbell-background-6k1m90sulb8o9r7e.jpg");
+  background-size: cover;
+} */
 
 
 
