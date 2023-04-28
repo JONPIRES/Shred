@@ -9,6 +9,8 @@ function CreateWorkoutPlan({ user }) {
   });
   const [error, setError] = useState("");
 
+  const [createdPlan, setCreatedPlan] = useState("");
+
   function handleChange(e) {
     setPlan({ ...plan, [e.target.name]: e.target.value });
     setError("");
@@ -16,9 +18,10 @@ function CreateWorkoutPlan({ user }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    window.location.replace(`workout/${createdPlan._id}`);
     try {
-      console.log(plan);
-      await planAPI.create(plan);
+      const createPlan = await planAPI.create(plan);
+      setCreatedPlan(createPlan);
     } catch (err) {
       console.log(err);
       setError("Create Plan Failed - Try Again");
