@@ -6,6 +6,7 @@ module.exports = {
   create,
   login,
   checkToken,
+  getUser,
 };
 
 async function checkToken(req, res) {
@@ -39,6 +40,15 @@ async function login(req, res) {
   } catch (err) {
     res.status(400).json(err);
   }
+}
+
+async function getUser(req, res) {
+ try {
+  const exUser = await User.findById(req.params.id)
+  res.send(exUser)
+ } catch (error) {
+   throw new Error('get user error')
+ }
 }
 
 /*--- Helper Functions --*/
