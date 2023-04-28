@@ -24,12 +24,10 @@ function AddExerciseToWorkoutPlan() {
     // Prevent form from being submitted to the server
     e.preventDefault();
     // window.location.replace(`/workout/${id}`);
-    // try {
-    //   // this still needs to be created
-    //   await planAPI.addExercise(exercise, id);
-    // } catch {
-    //   setError("Create Exercise Failed - Try Again");
-    // }
+    try {
+      // this still needs to be created
+      await planAPI.addExercise(exercise, id);
+    } catch {}
   }
 
   // this is for displaying the exercises as options in the select field in the form
@@ -42,7 +40,9 @@ function AddExerciseToWorkoutPlan() {
   }, []);
 
   return (
-    <div className="container container-fluid" style={{minHeight:'100vh', height:'auto'}}>
+    <div
+      className="container container-fluid"
+      style={{ minHeight: "100vh", height: "auto" }}>
       <h1 className="text-center mt-5"> Add Exercise</h1>
       <br />
       <form onSubmit={handleSubmit}>
