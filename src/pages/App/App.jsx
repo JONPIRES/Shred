@@ -30,7 +30,7 @@ export default function App() {
             element={<ExerciseFrom user={user} />}
           />
           <Route path="/exercise" element={<ViewExercises user={user} />} />
-          <Route path="/workout" element={<ViewWorkoutPlan />} />
+          <Route path="/workout" element={<ViewWorkoutPlan user={user} />} />
           <Route
             path="/exercise/:id"
             element={<ExerciseDetail user={user} />}
