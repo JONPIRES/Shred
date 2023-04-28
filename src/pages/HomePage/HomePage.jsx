@@ -1,7 +1,6 @@
 import React from "react";
 import "../HomePage/HomePage.css";
 
-
 function HomePage() {
   return (
     <div className="homepage container-fluid container">
@@ -11,13 +10,13 @@ function HomePage() {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <img
-          src="https://static.sportzbusiness.com/uploads/2022/10/Top-10-Gym-Equipment-Feature-Image.jpg"
+          src="https://st2.depositphotos.com/25557058/42679/v/600/depositphotos_426791560-stock-illustration-one-continuous-line-drawing-young.jpg"
           className="home-img"
         />
       </div>
       <div className="shred-intro">
         <img
-          src="https://static.sportzbusiness.com/uploads/2022/10/Top-10-Gym-Equipment-Feature-Image.jpg"
+          src="https://st2.depositphotos.com/25557058/42679/v/600/depositphotos_426791518-stock-illustration-one-single-line-drawing-fit.jpg"
           className="home-img"
         />
         <p className="home-info" style={{ flex: 1, flexWrap: "wrap" }}>
@@ -26,14 +25,12 @@ function HomePage() {
         </p>
       </div>
       <div>
-        <h2 className="homepage-quote">QUOTE / SLOGAN</h2>
-
-        <div className="text-center">
-          <button type="button" className="btn btn-primary">
+        <h2 className="homepage-quote d-flex justify-content-center align-items-center">
+          GET SHREDDED TODAY. &nbsp;{" "}
+          <button type="button" className="btn btn-light border border-dark">
             SIGN UP
           </button>
-        </div>
-
+        </h2>
       </div>
     </div>
   );
