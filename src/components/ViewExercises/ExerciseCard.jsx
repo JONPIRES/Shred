@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import * as usersAPI from "../../utilities/users-api";
 
 const ExerciseCard = ({ img, name, muscle, equipment, id, user }) => {
+
   const [creator, setCreator] = useState(null);
+
 
   async function fetchCreator() {
     if (user) {
