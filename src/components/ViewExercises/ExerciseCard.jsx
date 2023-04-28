@@ -7,7 +7,6 @@ const ExerciseCard = ({ img, name, muscle, equipment, id, user }) => {
 
   async function fetchCreator() {
     if (user) {
-      console.log(user);
       const exUser = await usersAPI.get(user);
       setCreator(exUser);
     }

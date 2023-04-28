@@ -27,13 +27,15 @@ const ExerciseDetail = ({ user }) => {
   }
 
   async function fetchExercise() {
-    const exercise = await exercisesAPI.detail(id);
-    setExercise(exercise);
+    if (user) {
+      const exercise = await exercisesAPI.detail(id);
+      setExercise(exercise);
+    }
   }
+
   useEffect(() => {
     fetchExercise();
   }, []);
-  
 
   return (
     <div
@@ -85,9 +87,7 @@ const ExerciseDetail = ({ user }) => {
             UPDATE
           </Link>
         </div>
-      ) : (
-        <p></p>
-      )}
+      ) : null}
     </div>
   );
 };
