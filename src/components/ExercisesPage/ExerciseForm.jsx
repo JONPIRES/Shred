@@ -44,7 +44,7 @@ const ExerciseForm = () => {
             onChange={handleChange}
             required
             className="form-control"
-            style="text-transform:capitalize"
+            style={{ textTransform: "capitalize" }}
           />
           <label className="form-label">Muscle Group:</label>
           <input
@@ -54,7 +54,7 @@ const ExerciseForm = () => {
             onChange={handleChange}
             required
             className="form-control"
-            style="text-transform:capitalize"
+            style={{ textTransform: "capitalize" }}
           />
           <label className="form-label">Equipment:</label>
           <input
@@ -64,7 +64,7 @@ const ExerciseForm = () => {
             onChange={handleChange}
             required
             className="form-control"
-            style="text-transform:capitalize"
+            style={{ textTransform: "capitalize" }}
           />
           <label className="form-label">Image URL:</label>
           <input
@@ -74,6 +74,7 @@ const ExerciseForm = () => {
             onChange={handleChange}
             required
             className="form-control"
+            
           />
           <label className="form-label">Explanation:</label>
           <input
@@ -83,7 +84,7 @@ const ExerciseForm = () => {
             onChange={handleChange}
             required
             className="form-control"
-            style="text-transform:capitalize"
+            style={{ textTransform: "capitalize" }}
           />
           <button type="submit" className="btn btn-dark mt-2">
             Create Exercise{" "}

@@ -39,6 +39,7 @@ function CreateWorkoutPlan({ user }) {
             onChange={handleChange}
             required
             className="form-control"
+            style={{ textTransform: "capitalize" }}
           />
           <label className="form-label">Goals:</label>
           <input
@@ -47,6 +48,7 @@ function CreateWorkoutPlan({ user }) {
             onChange={handleChange}
             required
             className="form-control"
+            style={{ textTransform: "capitalize" }}
           />
 
           <button type="submit" className="btn btn-dark mt-2">
