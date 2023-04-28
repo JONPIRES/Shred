@@ -7,6 +7,7 @@ module.exports = {
   viewPlan,
   viewPlans,
   planDetail,
+  addExercise,
 };
 
 async function viewPlans(req, res) {
