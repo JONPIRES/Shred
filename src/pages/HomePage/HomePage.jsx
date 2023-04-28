@@ -7,7 +7,6 @@ function HomePage() {
       <div className="shred-intro">
         <p className="home-info">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <img
           src="https://st2.depositphotos.com/25557058/42679/v/600/depositphotos_426791560-stock-illustration-one-continuous-line-drawing-young.jpg"
@@ -21,7 +20,6 @@ function HomePage() {
         />
         <p className="home-info" style={{ flex: 1, flexWrap: "wrap" }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
       <div>
