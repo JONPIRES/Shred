@@ -49,6 +49,24 @@ async function createPlan(req, res) {
   }
 }
 
+async function addExercise(req, res) {
+  try {
+    const form = req.body;
+    const plan = await Plan.findById(req.params.id);
+    plan.exercise.push({
+      exercise: form.exercise,
+      sets: form.sets,
+      reps: form.reps,
+      duration: form.duration,
+      notes: form.notes,
+    });
+    await plan.save();
+  } catch (error) {
+    console.log(error);
+    throw new Error("Create Exercise Error");
+  }
+}
+
 async function editPlan(req, res) {
   try {
     console.log("something");
