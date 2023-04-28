@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import * as usersAPI from "../../utilities/users-api";
 
 const ExerciseCard = ({ img, name, muscle, equipment, id, user }) => {
-  const [creator, setCreator] = useState();
+  const [creator, setCreator] = useState("");
 
-  useEffect(() => {
-    async function fetchCreator() {
-      const exUser = await usersAPI.get(user);
-      setCreator(exUser);
-    }
-    fetchCreator();
-  }, []);
+  // useEffect(() => {
+  //   async function fetchCreator() {
+  //     const exUser = await usersAPI.get(user);
+  //     setCreator(exUser);
+  //   }
+  //   fetchCreator();
+  // }, []);
 
   return (
     <div className="col-lg-4 col-md-6 mb-4">

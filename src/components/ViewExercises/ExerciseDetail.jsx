@@ -14,8 +14,6 @@ const ExerciseDetail = ({ user }) => {
     user: "",
   });
 
-  const [creator, setCreator] = useState("");
-
   const { id } = useParams();
 
   async function handleSubmit(e) {
@@ -35,7 +33,6 @@ const ExerciseDetail = ({ user }) => {
   useEffect(() => {
     fetchExercise();
   }, []);
-
   
 
   return (
