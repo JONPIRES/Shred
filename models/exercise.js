@@ -7,6 +7,10 @@ const exerciseSchema = new Schema({
     required: true,
     unique: true,
   },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "Users"
+  },
   muscleGroup: {
     type: String,
     required: true,

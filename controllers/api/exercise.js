@@ -1,4 +1,5 @@
 const { Exercise } = require("../../models");
+const user = require("../../models/user");
 
 module.exports = {
   createExercise,
@@ -12,7 +13,9 @@ module.exports = {
 async function viewExercises(req, res) {
   try {
     console.log("controller here");
+    
     const exercises = await Exercise.find({});
+    // const exerciseUser = await Exercise.findOne({user})
     res.send(exercises);
   } catch (err) {
     console.log(err);

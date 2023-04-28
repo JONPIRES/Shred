@@ -42,11 +42,11 @@ function AddExerciseToWorkoutPlan() {
   }, []);
 
   return (
-    <div>
-      <h1> Add Exercise</h1>
+    <div className="container container-fluid" style={{minHeight:'100vh', height:'auto'}}>
+      <h1 className="text-center mt-5"> Add Exercise</h1>
       <br />
       <form onSubmit={handleSubmit}>
-        <label className="form-label">Exercise</label>
+        <label className="form-label">Exercise</label> <br />
         <select name="" id="">
           {exercises.map((exercise) => {
             return (
@@ -56,7 +56,8 @@ function AddExerciseToWorkoutPlan() {
             );
           })}
         </select>
-        <label className="form-label">Sets</label>
+        <br />
+        <label className="form-label mt-2">Sets</label>
         <input
           type="text"
           name="exercise[0].sets"

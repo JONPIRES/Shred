@@ -40,7 +40,9 @@ function UpdateExercise() {
   }
 
   return (
-    <div>
+    <div className="container">
+      <h1 className="text-center mt-5">Edit <span className="text-info">{exercise.name}</span></h1>
+      
       <div
         className="form-container container mt-5"
         style={{ minHeight: "100vh", height: "auto" }}>
@@ -90,9 +92,11 @@ function UpdateExercise() {
             required
             className="form-control"
           />
-          <button type="submit" className="btn btn-dark mt-2">
+          <div className="text-center">
+          <button type="submit" className="btn btn-dark mt-3">
             Edit Exercise{" "}
           </button>
+          </div>
         </form>
       </div>
       <p className="error-message ">&nbsp;{error}</p>
