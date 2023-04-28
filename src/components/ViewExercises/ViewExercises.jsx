@@ -18,7 +18,7 @@ const ExerciseList = ({ user }) => {
     <div
       className="container-fluid container"
       style={{ minHeight: "100vh", height: "auto" }}>
-      <h1 className="text-center mt-3">Exercises </h1>
+      <h1 className="text-center mt-3 ">Exercises </h1>
       <div className="row d-flex justify-content-center">
         {exercises.map((exercise, idx) => (
           <ExerciseCard

@@ -45,7 +45,7 @@ const ExerciseDetail = ({ user }) => {
       <h1 className="text-center mt-3">{exercise.name}</h1>
       <h3 className="text-center mt-2">Muscle Group: {exercise.muscleGroup}</h3>
 
-      <section className="row d-flex justify-content-center align-items-center">
+      <section className="row d-flex justify-content-center align-items-center ">
         <img
           src={exercise.img}
           alt=""
@@ -54,7 +54,7 @@ const ExerciseDetail = ({ user }) => {
         />
 
         <div
-          className="col-lg-6 d-flex flex-column justify-content-center container container-fluid"
+          className="col-lg-6 d-flex flex-column justify-content-center container container-fluid bg-light"
           style={{
             borderLeft: "solid black 1px",
             height: "15em",
@@ -89,7 +89,7 @@ const ExerciseDetail = ({ user }) => {
           </Link>
         </div>
       ) : (
-        <p>anuthing</p>
+        <p></p>
       )}
     </div>
   );
