@@ -11,7 +11,7 @@ const ExerciseDetail = () => {
     img: "",
     explanation: "",
   });
-  
+
   const { id } = useParams();
 
   async function handleSubmit(e) {
@@ -33,25 +33,30 @@ const ExerciseDetail = () => {
   }, []);
 
   return (
-    <div className="container" style={{ minHeight: "100vh", height: "auto" }}>
+    <div className="container container-fluid" style={{ minHeight: "100vh", height: "auto" }}>
       <h1 className="text-center mt-3">{exercise.name}</h1>
       <h3 className="text-center mt-2">Muscle Group: {exercise.muscleGroup}</h3>
 
-      <section className="row">
-        <img src={exercise.img} alt="" className="col-lg-6 img-fluid" />
-        <div className="col-lg-6" style={{ marginTop: "5em" }}>
-          <p>Equipment: {exercise.equipment}</p>
-          <p>Explanation: {exercise.explanation}</p>
+      <section className="row d-flex justify-content-center align-items-center">
+        
+          <img src={exercise.img} alt="" className="col-lg-6 img-fluid container container-fluid" style={{ height: '25em', width: '25em', }} />
+        
+        <div className="col-lg-6 d-flex flex-column justify-content-center container container-fluid" style={{ borderLeft: 'solid black 1px', height:'15em', paddingLeft:'1.5em'}}>
+          <p> <strong>Equipment: </strong> &nbsp; <br /> {exercise.equipment}</p>
+          <hr />
+          <p><strong>Explanation:</strong> &nbsp;  <br />{exercise.explanation}</p>
         </div>
       </section>
       <div className="container text-center d-flex justify-content-center align-items-center">
         <form onSubmit={handleSubmit}>
-          <button type="submit" className="btn btn-danger">
+          
+          <button type="submit" className="btn btn-danger p-2">
             DELETE
           </button>
         </form>
+        
         <Link
-          className="text-light link-underline-opacity-0 btn btn-primary "
+          className="text-light link-underline-opacity-0 btn btn-primary p-2"
           to={`/update/${id}`}
           style={{ marginTop: "1em", marginLeft: "2em" }}>
           {" "}
