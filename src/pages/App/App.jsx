@@ -18,17 +18,23 @@ import WorkoutDetail from "../../components/ViewWorkoutPlan/WorkoutDetail";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
- 
+
   return (
     <main className="App">
       <>
         <NavBar user={user} setUser={setUser} />
         <Routes>
           {/* Route components in here */}
-          <Route path="/create-exercise" element={<ExerciseFrom />} />
-          <Route path="/exercise" element={<ViewExercises user={user}/>} />
+          <Route
+            path="/create-exercise"
+            element={<ExerciseFrom user={user} />}
+          />
+          <Route path="/exercise" element={<ViewExercises user={user} />} />
           <Route path="/workout" element={<ViewWorkoutPlan />} />
-          <Route path="/exercise/:id" element={<ExerciseDetail user={user} />} />
+          <Route
+            path="/exercise/:id"
+            element={<ExerciseDetail user={user} />}
+          />
           <Route path="/update/:id" element={<UpdateExercise />} />
           <Route
             path="/workout/create"

@@ -3,7 +3,7 @@ import * as exercisesAPI from "../../utilities/exercises-api";
 import "./ViewExercises.css";
 import ExerciseCard from "./ExerciseCard";
 
-const ExerciseList = () => {
+const ExerciseList = ({ user }) => {
   const [exercises, setExercises] = useState([]);
 
   useEffect(() => {

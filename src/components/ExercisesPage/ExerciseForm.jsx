@@ -2,8 +2,9 @@ import { useState } from "react";
 import React from "react";
 import * as ExerciseService from "../../utilities/exercise-services.js";
 
-const ExerciseForm = () => {
+const ExerciseForm = ({ user }) => {
   const [exercise, setExercise] = useState({
+    user: user,
     name: "",
     muscleGroup: "",
     equipment: "",
