@@ -5,11 +5,13 @@ import * as usersAPI from "../../utilities/users-api";
 const ExerciseCard = ({ img, name, muscle, equipment, id, user }) => {
   const [creator, setCreator] = useState();
 
-  useEffect(() => {
-    async function fetchCreator() {
+  async function fetchCreator() {
+    if (user) {
       const exUser = await usersAPI.get(user);
       setCreator(exUser);
     }
+  }
+  useEffect(() => {
     fetchCreator();
   }, []);
 
