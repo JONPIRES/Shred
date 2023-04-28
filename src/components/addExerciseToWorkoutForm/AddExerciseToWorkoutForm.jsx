@@ -48,9 +48,9 @@ function AddExerciseToWorkoutPlan() {
       <form onSubmit={handleSubmit}>
         <label className="form-label">Exercise</label> <br />
         <select name="" id="">
-          {exercises.map((exercise) => {
+          {exercises.map((exercise, idx) => {
             return (
-              <option value="exercise._id">
+              <option key={exercise + idx} value="exercise._id">
                 {exercise.name}/{exercise.muscleGroup}
               </option>
             );
@@ -89,6 +89,9 @@ function AddExerciseToWorkoutPlan() {
           required
           className="form-control"
         />
+        <button type="submit" className="btn btn-dark mt-2">
+          Add Exercise{" "}
+        </button>
       </form>
     </div>
   );
