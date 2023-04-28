@@ -14,6 +14,8 @@ const ExerciseDetail = ({ user }) => {
     user: "",
   });
 
+  const [creator, setCreator] = useState("");
+
   const { id } = useParams();
 
   async function handleSubmit(e) {
@@ -26,25 +28,15 @@ const ExerciseDetail = ({ user }) => {
     }
   }
 
+  async function fetchExercise() {
+    const exercise = await exercisesAPI.detail(id);
+    setExercise(exercise);
+  }
   useEffect(() => {
-    async function fetchExercise() {
-      const exercise = await exercisesAPI.detail(id);
-      setExercise(exercise);
-    }
     fetchExercise();
   }, []);
 
-  const [creator, setCreator] = useState({
-    name: "",
-  });
-
-  useEffect(() => {
-    async function fetchCreator() {
-      const exUser = await usersAPI.get(exercise.user);
-      setCreator(exUser);
-    }
-    fetchCreator();
-  }, []);
+  
 
   return (
     <div
@@ -80,8 +72,8 @@ const ExerciseDetail = ({ user }) => {
         </div>
       </section>
 
-      {user.name && creator.name ? (
-        <div className="container text-center d-flex justify-content-center align-items-center">
+      {user._id === exercise.user ? (
+        <div className="container text-center d-flex justify-content-center align-items-center mt-2">
           <form onSubmit={handleSubmit}>
             <button type="submit" className="btn btn-danger p-2">
               DELETE
@@ -91,7 +83,7 @@ const ExerciseDetail = ({ user }) => {
           <Link
             className="text-light link-underline-opacity-0 btn btn-primary p-2"
             to={`/update/${id}`}
-            style={{ marginTop: "1em", marginLeft: "2em" }}>
+            style={{ marginLeft: "2em" }}>
             {" "}
             UPDATE
           </Link>
