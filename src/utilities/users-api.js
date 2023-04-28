@@ -11,3 +11,7 @@ export async function login(loginData) {
 export function checkToken() {
   return sendRequest(`${BASE_URL}/check-token`);
 }
+
+export function get(user) {
+  return sendRequest(`${BASE_URL}/get-user/${user}`)
+}

@@ -20,7 +20,7 @@ const ExerciseList = ({ user }) => {
       style={{ minHeight: "100vh", height: "auto" }}>
       <h1 className="text-center mt-3">Exercises </h1>
       <div className="row d-flex justify-content-center">
-        {exercises.map((exercise, idx, user) => (
+        {exercises.map((exercise, idx) => (
           <ExerciseCard
             key={exercise._id}
             img={exercise.img}

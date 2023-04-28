@@ -30,7 +30,7 @@ const ExerciseCard = ({ img, name, muscle, equipment, id, user }) => {
           <h2 className="card-title text-center">{name}</h2>
           <p className="card-text">Muscle Group: {muscle}</p>
           <p className="card-text">Equipment: {equipment}</p>
-          <p>{user}</p>
+          <p> By: {creator && creator.name}</p>
           <div className="text-center">
             <Link to={`/exercise/${id}`} className="btn btn-primary p-2">
               View Exercise
