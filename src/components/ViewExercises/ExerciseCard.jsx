@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 import * as usersAPI from "../../utilities/users-api";
 
 const ExerciseCard = ({ img, name, muscle, equipment, id, user }) => {
-
   const [creator, setCreator] = useState(null);
-
 
   async function fetchCreator() {
     if (user) {
+      console.log(user);
       const exUser = await usersAPI.get(user);
       setCreator(exUser);
     }
@@ -16,7 +15,6 @@ const ExerciseCard = ({ img, name, muscle, equipment, id, user }) => {
   useEffect(() => {
     fetchCreator();
   }, []);
-
   return (
     <div className="col-lg-4 col-md-6 mb-4">
       <div
@@ -34,7 +32,7 @@ const ExerciseCard = ({ img, name, muscle, equipment, id, user }) => {
           <h2 className="card-title text-center">{name}</h2>
           <p className="card-text">Muscle Group: {muscle}</p>
           <p className="card-text">Equipment: {equipment}</p>
-          <p> By: {creator && creator.name}</p>
+          {creator ? <p>{creator.name}</p> : null}
           <div className="text-center">
             <Link to={`/exercise/${id}`} className="btn btn-primary p-2">
               View Exercise
