@@ -11,7 +11,7 @@ const ExerciseDetail = ({ user }) => {
     equipments: "",
     img: "",
     explanation: "",
-    user:""
+    user: "",
   });
 
   const { id } = useParams();
@@ -34,7 +34,9 @@ const ExerciseDetail = ({ user }) => {
     fetchExercise();
   }, []);
 
-  const [creator, setCreator] = useState();
+  const [creator, setCreator] = useState({
+    name: "",
+  });
 
   useEffect(() => {
     async function fetchCreator() {
@@ -45,30 +47,46 @@ const ExerciseDetail = ({ user }) => {
   }, []);
 
   return (
-    <div className="container container-fluid" style={{ minHeight: "100vh", height: "auto" }}>
+    <div
+      className="container container-fluid"
+      style={{ minHeight: "100vh", height: "auto" }}>
       <h1 className="text-center mt-3">{exercise.name}</h1>
       <h3 className="text-center mt-2">Muscle Group: {exercise.muscleGroup}</h3>
 
       <section className="row d-flex justify-content-center align-items-center">
+        <img
+          src={exercise.img}
+          alt=""
+          className="col-lg-6 img-fluid container container-fluid"
+          style={{ height: "25em", width: "25em" }}
+        />
 
-        <img src={exercise.img} alt="" className="col-lg-6 img-fluid container container-fluid" style={{ height: '25em', width: '25em', }} />
-
-        <div className="col-lg-6 d-flex flex-column justify-content-center container container-fluid" style={{ borderLeft: 'solid black 1px', height: '15em', paddingLeft: '1.5em' }}>
-          <p> <strong>Equipment: </strong> &nbsp; <br /> {exercise.equipment}/</p>
+        <div
+          className="col-lg-6 d-flex flex-column justify-content-center container container-fluid"
+          style={{
+            borderLeft: "solid black 1px",
+            height: "15em",
+            paddingLeft: "1.5em",
+          }}>
+          <p>
+            {" "}
+            <strong>Equipment: </strong> &nbsp; <br /> {exercise.equipment}/
+          </p>
           <hr />
-          <p><strong>Explanation:</strong> &nbsp;  <br />{exercise.explanation}</p>
+          <p>
+            <strong>Explanation:</strong> &nbsp; <br />
+            {exercise.explanation}
+          </p>
         </div>
       </section>
-      {user && user.name === creator && creator.name ? (
 
+      {user.name && creator.name ? (
         <div className="container text-center d-flex justify-content-center align-items-center">
           <form onSubmit={handleSubmit}>
-
             <button type="submit" className="btn btn-danger p-2">
               DELETE
             </button>
           </form>
-
 
           <Link
             className="text-light link-underline-opacity-0 btn btn-primary p-2"
@@ -78,7 +96,9 @@ const ExerciseDetail = ({ user }) => {
             UPDATE
           </Link>
         </div>
-         ) : (<p>By: {creator && creator.name} </p> )} 
+      ) : (
+        <p>anuthing</p>
+      )}
     </div>
   );
 };
