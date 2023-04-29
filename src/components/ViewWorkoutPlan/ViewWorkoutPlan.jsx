@@ -29,7 +29,7 @@ function ViewWorkoutPlan({ user }) {
                 <Link
                   key={plan + idx}
                   to={`/workout/${plan._id}`}
-                  className="link-offset-2 link-offset-3-hover
+                  className="link-offset-2 link-offset-3-hover m-1
                     link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover text-light">
                   {plan.name}
                 </Link>
