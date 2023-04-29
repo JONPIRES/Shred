@@ -16,7 +16,7 @@ const ExerciseSchema = new Schema({
     type: Number,
   },
   notes: {
-    type: String,
+    type: [{ type: String }],
   },
 });
 

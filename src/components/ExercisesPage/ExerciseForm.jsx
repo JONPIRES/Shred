@@ -2,8 +2,9 @@ import { useState } from "react";
 import React from "react";
 import * as ExerciseService from "../../utilities/exercise-services.js";
 
-const ExerciseForm = () => {
+const ExerciseForm = ({ user }) => {
   const [exercise, setExercise] = useState({
+    user: user,
     name: "",
     muscleGroup: "",
     equipment: "",
@@ -45,6 +46,7 @@ const ExerciseForm = () => {
             required
             className="form-control"
             style={{ textTransform: "capitalize" }}
+            // style="text-transform:capitalize"
           />
           <label className="form-label">Muscle Group:</label>
           <input
@@ -55,6 +57,7 @@ const ExerciseForm = () => {
             required
             className="form-control"
             style={{ textTransform: "capitalize" }}
+            // style="text-transform:capitalize"
           />
           <label className="form-label">Equipment:</label>
           <input
@@ -65,6 +68,7 @@ const ExerciseForm = () => {
             required
             className="form-control"
             style={{ textTransform: "capitalize" }}
+            // style="text-transform:capitalize"
           />
           <label className="form-label">Image URL:</label>
           <input
@@ -85,6 +89,7 @@ const ExerciseForm = () => {
             required
             className="form-control"
             style={{ textTransform: "capitalize" }}
+            // style="text-transform:capitalize"
           />
           <button type="submit" className="btn btn-dark mt-2">
             Create Exercise{" "}

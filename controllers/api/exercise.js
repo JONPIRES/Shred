@@ -12,10 +12,7 @@ module.exports = {
 
 async function viewExercises(req, res) {
   try {
-    console.log("controller here");
-    
     const exercises = await Exercise.find({});
-    // const exerciseUser = await Exercise.findOne({user})
     res.send(exercises);
   } catch (err) {
     console.log(err);
@@ -25,7 +22,6 @@ async function viewExercises(req, res) {
 
 async function exerciseDetail(req, res) {
   try {
-    console.log(req.params.id);
     const exercise = await Exercise.findById(req.params.id);
     res.send(exercise);
   } catch (err) {
@@ -45,7 +41,6 @@ async function viewExercise(req, res) {
 
 async function createExercise(req, res) {
   try {
-    console.log(req.body);
     const exercise = await Exercise.create(req.body);
   } catch (error) {
     console.log(error);
@@ -55,7 +50,6 @@ async function createExercise(req, res) {
 
 async function editExercise(req, res) {
   try {
-    console.log("something");
     await Exercise.findByIdAndUpdate(req.params.id, req.body);
   } catch (error) {
     console.log(error);
@@ -65,7 +59,6 @@ async function editExercise(req, res) {
 
 async function deleteExercise(req, res) {
   try {
-    console.log("route was hit");
     await Exercise.findByIdAndDelete(req.params.id);
   } catch (error) {
     console.log(error);

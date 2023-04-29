@@ -21,36 +21,37 @@ function AddExerciseToWorkoutPlan() {
   }
 
   async function handleSubmit(e) {
-    // Prevent form from being submitted to the server
     e.preventDefault();
-    // window.location.replace(`/workout/${id}`);
-    // try {
-    //   // this still needs to be created
-    //   await planAPI.addExercise(exercise, id);
-    // } catch {
-    //   setError("Create Exercise Failed - Try Again");
-    // }
+    window.location.replace(`/workout/${id}`);
+    try {
+      await planAPI.addExercise(exercise, id);
+    } catch {}
   }
 
   // this is for displaying the exercises as options in the select field in the form
+  async function fetchExercises() {
+    const exercises = await exercisesAPI.get();
+    setExercises(exercises);
+  }
   useEffect(() => {
-    async function fetchExercises() {
-      const exercises = await exercisesAPI.get();
-      setExercises(exercises);
-    }
     fetchExercises();
   }, []);
 
   return (
-    <div className="container container-fluid" style={{minHeight:'100vh', height:'auto'}}>
+    <div
+      className="container container-fluid"
+      style={{ minHeight: "100vh", height: "auto" }}>
       <h1 className="text-center mt-5"> Add Exercise</h1>
       <br />
       <form onSubmit={handleSubmit}>
         <label className="form-label">Exercise</label> <br />
-        <select name="" id="">
-          {exercises.map((exercise) => {
+        <select name="exercise" onChange={handleChange}>
+          <option disabled selected="selected">
+            Choose One
+          </option>
+          {exercises.map((exercise, idx) => {
             return (
-              <option value="exercise._id">
+              <option key={exercise + idx} value={exercise._id}>
                 {exercise.name}/{exercise.muscleGroup}
               </option>
             );
@@ -60,7 +61,7 @@ function AddExerciseToWorkoutPlan() {
         <label className="form-label mt-2">Sets</label>
         <input
           type="text"
-          name="exercise[0].sets"
+          name="sets"
           onChange={handleChange}
           required
           className="form-control"
@@ -68,7 +69,7 @@ function AddExerciseToWorkoutPlan() {
         <label className="form-label">Reps</label>
         <input
           type="text"
-          name="exercise[0].reps"
+          name="reps"
           onChange={handleChange}
           required
           className="form-control"
@@ -76,19 +77,21 @@ function AddExerciseToWorkoutPlan() {
         <label className="form-label">Duration</label>
         <input
           type="text"
-          name="exercise[0].duration"
+          name="duration"
           onChange={handleChange}
-          required
           className="form-control"
         />
         <label className="form-label">Notes</label>
         <input
           type="text"
-          name="exercise[0].notes"
+          name="notes"
           onChange={handleChange}
           required
           className="form-control"
         />
+        <button type="submit" className="btn btn-dark mt-2">
+          Add Exercise{" "}
+        </button>
       </form>
     </div>
   );

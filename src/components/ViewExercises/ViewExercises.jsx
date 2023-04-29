@@ -3,7 +3,7 @@ import * as exercisesAPI from "../../utilities/exercises-api";
 import "./ViewExercises.css";
 import ExerciseCard from "./ExerciseCard";
 
-const ExerciseList = () => {
+const ExerciseList = ({ user }) => {
   const [exercises, setExercises] = useState([]);
 
   useEffect(() => {
@@ -18,9 +18,9 @@ const ExerciseList = () => {
     <div
       className="container-fluid container"
       style={{ minHeight: "100vh", height: "auto" }}>
-      <h1 className="text-center mt-3">Exercises </h1>
+      <h1 className="text-center mt-3 ">Exercises </h1>
       <div className="row d-flex justify-content-center">
-        {exercises.map((exercise, idx, user) => (
+        {exercises.map((exercise, idx) => (
           <ExerciseCard
             key={exercise._id}
             img={exercise.img}

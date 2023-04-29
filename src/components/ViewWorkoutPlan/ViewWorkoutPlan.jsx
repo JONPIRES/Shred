@@ -18,11 +18,12 @@ function ViewWorkoutPlan() {
       <div
         className="row  container-fluid"
         style={{ minHeight: "100vh", height: "auto" }}>
-        <div className="col-lg-2 bg-primary d-flex justify-content-center align-items-center flex-column">
+        <div className="col-lg-2 d-flex justify-content-center align-items-center flex-column" style={{ backgroundColor:'#243a4f'}}>
           <div className="text-center mt-3">
-            {plan.map((plan) => {
+            {plan.map((plan, idx) => {
               return (
                 <Link
+                  key={plan + idx}
                   to={`/workout/${plan._id}`}
                   className="link-offset-2 link-offset-3-hover
                     link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover text-light">

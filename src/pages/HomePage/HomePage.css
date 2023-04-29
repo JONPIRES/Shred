@@ -1,45 +1,11 @@
-.homepage {
-  min-height: 100vh;
-  height: auto;
+.homepage{
+    min-height:100vh;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
 }
 
-.shred-intro {
-  margin: 1rem;
-  display: flex;
-  align-items: center;
-  margin-bottom: -2px;
-}
-
-.home-img {
-  height: 8rem;
-  width:fit-content;
-  margin-right: 1rem;
-  border: 2px solid black;
-  opacity: 0.854;
-}
-
-.home-info {
-  color: azure;
-  height: 8rem;
-  width:fit-content;
-  font-size: 4vw;
-  margin-right: 1rem;
-  border: 2px solid rgb(0, 0, 0);
-  background-color: rgba(21, 20, 25, 0.941);
-  transform: translateY(8px);
-}
-
-.homepage-quote {
-  color: azure;
-  height: 4rem;
-  margin-left: 1rem;
-  margin-right: 2rem;
-  margin-top: 1rem;
-  font-size: 7vw;
-  border: 2px solid black;
-  background-color: rgba(21, 20, 25, 0.941);
-}
-
-.btn-primary {
-  margin-bottom: 2px;
+.homepage p{
+    text-align: justify;
 }

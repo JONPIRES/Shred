@@ -7,6 +7,7 @@ module.exports = {
   viewPlan,
   viewPlans,
   planDetail,
+  addExercise,
 };
 
 async function viewPlans(req, res) {
@@ -43,6 +44,24 @@ async function viewPlan(req, res) {
 async function createPlan(req, res) {
   try {
     await Plan.create(req.body);
+  } catch (error) {
+    console.log(error);
+    throw new Error("Create Exercise Error");
+  }
+}
+
+async function addExercise(req, res) {
+  try {
+    const form = req.body;
+    const plan = await Plan.findById(req.params.id);
+    plan.exercise.push({
+      exercise: form.exercise,
+      sets: form.sets,
+      reps: form.reps,
+      duration: form.duration,
+      notes: form.notes,
+    });
+    await plan.save();
   } catch (error) {
     console.log(error);
     throw new Error("Create Exercise Error");
