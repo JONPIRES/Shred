@@ -43,7 +43,8 @@ async function viewPlan(req, res) {
 
 async function createPlan(req, res) {
   try {
-    await Plan.create(req.body);
+    const createdPlan = await Plan.create(req.body);
+    res.send(createdPlan);
   } catch (error) {
     console.log(error);
     throw new Error("Create Exercise Error");
