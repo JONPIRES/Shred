@@ -30,6 +30,8 @@ const WorkoutDetail = ({ user }) => {
     fetchPlan();
   }, []);
 
+  console.log(planDetail);
+
   return (
     <div className="" style={{ minHeight: "100vh", height: "auto" }}>
       <div
@@ -63,7 +65,12 @@ const WorkoutDetail = ({ user }) => {
               Add exercise
             </Link>
           </div>
-          <div className="">{/* Include a sample workout here */}</div>
+          <div className="">
+            {planDetail &&
+              planDetail.exercise.map((exercise) => {
+                return <h1>{exercise.notes}</h1>;
+              })}
+          </div>
         </div>
       </div>
     </div>
