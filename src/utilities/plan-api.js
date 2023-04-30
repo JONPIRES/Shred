@@ -13,9 +13,9 @@ export async function get() {
   return sendRequest(BASE_URL);
 }
 
-// export async function detail(exerciseId) {
-//   return sendRequest(`${BASE_URL}/detail/${exerciseId}`);
-// }
+export async function detail(planID) {
+  return sendRequest(`${BASE_URL}/detail/${planID}`);
+}
 
 // export async function deleteExercise(exerciseId) {
 //   return sendRequest(`${BASE_URL}/delete-exercise/${exerciseId}`, "POST");

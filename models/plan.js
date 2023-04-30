@@ -28,7 +28,6 @@ const planSchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
   },
   goals: {
     type: String,
