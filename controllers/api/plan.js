@@ -56,6 +56,8 @@ async function addExercise(req, res) {
     const plan = await Plan.findById(req.params.id);
     plan.exercise.push({
       exercise: form.exercise,
+      name: form.name,
+      muscleGroup: form.muscleGroup,
       sets: form.sets,
       reps: form.reps,
       duration: form.duration,

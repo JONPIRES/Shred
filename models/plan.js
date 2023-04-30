@@ -6,6 +6,12 @@ const ExerciseSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Exercises",
   },
+  name: {
+    type: String,
+  },
+  muscleGroup: {
+    type: String,
+  },
   sets: {
     type: Number,
   },
