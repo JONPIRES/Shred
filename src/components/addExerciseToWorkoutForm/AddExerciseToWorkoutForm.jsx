@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import * as planAPI from "../../utilities/plan-api";
 import * as exercisesAPI from "../../utilities/exercises-api";
 import { useParams } from "react-router-dom";
+import WorkoutExerciseCard from "./WorkoutExerciseCard";
 
 function AddExerciseToWorkoutPlan() {
   const { id } = useParams();
@@ -9,6 +10,8 @@ function AddExerciseToWorkoutPlan() {
   const [exercises, setExercises] = useState([]);
 
   const [exercise, setExercise] = useState({
+    muscleGroup: "",
+    name: "",
     exercise: "",
     sets: "",
     reps: "",
@@ -18,6 +21,21 @@ function AddExerciseToWorkoutPlan() {
 
   function handleChange(e) {
     setExercise({ ...exercise, [e.target.name]: e.target.value });
+  }
+  function handleSelectChange(e) {
+    if (e.target.name === "exercise") {
+      const selectedExercise = exercises.find(
+        (exercise) => exercise._id === e.target.value
+      );
+      setExercise({
+        ...exercise,
+        muscleGroup: selectedExercise.muscleGroup,
+        name: selectedExercise.name,
+        exercise: selectedExercise._id,
+      });
+    } else {
+      setExercise({ ...exercise, [e.target.name]: e.target.value });
+    }
   }
 
   async function handleSubmit(e) {
@@ -45,15 +63,13 @@ function AddExerciseToWorkoutPlan() {
       <br />
       <form onSubmit={handleSubmit}>
         <label className="form-label">Exercise</label> <br />
-        <select name="exercise" onChange={handleChange}>
+        <select name="exercise" onChange={handleSelectChange}>
           <option disabled selected="selected">
             Choose One
           </option>
           {exercises.map((exercise, idx) => {
             return (
-              <option key={exercise + idx} value={exercise._id}>
-                {exercise.name}/{exercise.muscleGroup}
-              </option>
+              <WorkoutExerciseCard key={exercise + idx} exercise={exercise} />
             );
           })}
         </select>

@@ -14,7 +14,6 @@ async function viewPlans(req, res) {
   try {
     const plans = await Plan.find({});
     res.send(plans);
-    console.log("exercises");
   } catch (err) {
     console.log(err);
     throw new Error("view All exercises controller Error");
@@ -24,8 +23,8 @@ async function viewPlans(req, res) {
 async function planDetail(req, res) {
   try {
     console.log(req.params.id);
-    const exercise = await Exercise.findById(req.params.id);
-    res.send(exercise);
+    const plan = await Plan.findById(req.params.id);
+    res.send(plan);
   } catch (err) {
     console.log(err);
     throw new Error("exercise detail controller Error");
@@ -43,7 +42,8 @@ async function viewPlan(req, res) {
 
 async function createPlan(req, res) {
   try {
-    await Plan.create(req.body);
+    const createdPlan = await Plan.create(req.body);
+    res.send(createdPlan);
   } catch (error) {
     console.log(error);
     throw new Error("Create Exercise Error");

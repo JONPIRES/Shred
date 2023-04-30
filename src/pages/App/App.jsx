@@ -30,7 +30,7 @@ export default function App() {
             element={<ExerciseFrom user={user} />}
           />
           <Route path="/exercise" element={<ViewExercises user={user} />} />
-          <Route path="/workout" element={<ViewWorkoutPlan />} />
+          <Route path="/workout" element={<ViewWorkoutPlan user={user} />} />
           <Route
             path="/exercise/:id"
             element={<ExerciseDetail user={user} />}
@@ -43,7 +43,7 @@ export default function App() {
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
           <Route path="/" element={<HomePage />} />
-          <Route path="/workout/:id" element={<WorkoutDetail />} />
+          <Route path="/workout/:id" element={<WorkoutDetail user={user} />} />
           <Route
             path="/workout/:id/add-exercise"
             element={<AddExerciseToWorkoutPlan />}
