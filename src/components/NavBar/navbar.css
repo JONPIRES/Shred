@@ -61,18 +61,5 @@
     }
   }
 
-  @keyframes debris {
-    0% { transform: translateY(0) rotate(0deg); }
-    100% { transform: translateY(-500px) rotate(360deg); }
-  }
-  
-  .debris {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: white;
-    animation: debris 1s linear infinite;
-    opacity: 0;
-  }
   
   

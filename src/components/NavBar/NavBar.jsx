@@ -26,17 +26,17 @@ export default function NavBar({ user, setUser }) {
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false">
-                Workout Plan{" "}
+                Workouts{" "}
               </Link>
               <div className="dropdown-menu">
                 <div>
                   <Link className="dropdown-item" to="/workout">
-                    My Workout Plan
+                    My Workouts
                   </Link>
                 </div>
                 <div>
                   <Link className="dropdown-item" to="/workout/create">
-                    Edit Workout Plan
+                    Create Workout
                   </Link>
                 </div>
               </div>

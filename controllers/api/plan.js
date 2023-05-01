@@ -8,6 +8,8 @@ module.exports = {
   viewPlans,
   planDetail,
   addExercise,
+  addNote,
+  deleteExercise,
 };
 
 async function viewPlans(req, res) {
@@ -33,7 +35,7 @@ async function planDetail(req, res) {
 
 async function viewPlan(req, res) {
   try {
-    const showExercise = await Exercise.findById(req.params.id);
+    await Exercise.findById(req.params.id);
   } catch (error) {
     console.log(error);
     throw new Error("View Exercise Error");
@@ -63,6 +65,28 @@ async function addExercise(req, res) {
       duration: form.duration,
       notes: form.notes,
     });
+    await plan.save();
+  } catch (error) {
+    console.log(error);
+    throw new Error("Create Exercise Error");
+  }
+}
+async function addNote(req, res) {
+  try {
+    const form = req.body;
+    const plan = await Plan.findById(req.params.id);
+    plan.exercise[req.params.idx].notes.push(form.notes);
+    await plan.save();
+  } catch (error) {
+    console.log(error);
+    throw new Error("Create Exercise Error");
+  }
+}
+async function deleteExercise(req, res) {
+  try {
+    const plan = await Plan.findById(req.params.id);
+    console.log(plan);
+    plan.exercise.splice(req.params.idx, 1);
     await plan.save();
   } catch (error) {
     console.log(error);

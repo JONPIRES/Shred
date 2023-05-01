@@ -37,11 +37,15 @@ function ViewWorkoutPlan({ user }) {
             )}
           </div>
         </div>
+<<<<<<< HEAD
         <div className="col-lg-9 container fade-down">
           <div className="text-center mt-5 ">
             <h1>Name Of Workout</h1>
             <hr />
           </div>
+=======
+        <div className="col-lg-9 container">
+>>>>>>> 387914c7749ad17b2cba6456d3882f482b493986
           <div className="">{/* Include a sample workout here */}</div>
         </div>
       </div>

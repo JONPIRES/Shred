@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import * as planAPI from "../../utilities/plan-api";
 import * as exercisesAPI from "../../utilities/exercises-api";
 import { useParams } from "react-router-dom";
-import WorkoutExerciseCard from "./WorkoutExerciseCard";
+import CreateWorkoutExerciseCard from "./CreateWorkoutExerciseCard";
 
 function AddExerciseToWorkoutPlan() {
   const { id } = useParams();
@@ -69,7 +69,10 @@ function AddExerciseToWorkoutPlan() {
           </option>
           {exercises.map((exercise, idx) => {
             return (
-              <WorkoutExerciseCard key={exercise + idx} exercise={exercise} />
+              <CreateWorkoutExerciseCard
+                key={exercise + idx}
+                exercise={exercise}
+              />
             );
           })}
         </select>
@@ -97,7 +100,7 @@ function AddExerciseToWorkoutPlan() {
           onChange={handleChange}
           className="form-control"
         />
-        <label className="form-label">Notes</label>
+        <label className="form-label">Initial Weight</label>
         <input
           type="text"
           name="notes"
