@@ -11,6 +11,8 @@ const WorkoutExerciseCard = ({ exercise, allExercises }) => {
   });
   const [allNotes, setAllNotes] = useState([exercise.notes]);
 
+  const [trigger, setTrigger] = useState("");
+
   let index = allExercises.indexOf(exercise);
 
   function handleChange(e) {
@@ -33,9 +35,10 @@ const WorkoutExerciseCard = ({ exercise, allExercises }) => {
 
   async function handleDeleteSubmit(e) {
     e.preventDefault();
-    // window.location.replace(`workout/${id}`);
+    window.location.replace(`/workout/${id}`);
     try {
       await planAPI.deleteExercise(id, index);
+      setTrigger("triggered");
     } catch (err) {
       console.log(err);
     }
