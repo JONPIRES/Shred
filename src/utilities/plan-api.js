@@ -25,11 +25,9 @@ export async function update(form) {
   return sendRequest(`${BASE_URL}/edit-plan/${form._id}`, "PUT", form);
 }
 
-// export async function deleteNote(id, index) {
-//   return sendRequest(`${BASE_URL}/delete-note/${id}/${index}`, "POST");
-// }
+export async function deleteExercise(id, index) {
+  return sendRequest(`${BASE_URL}/delete-exercise/${id}/${index}`, "POST");
+}
 export async function addNote(id, form, idx) {
-  console.log(id);
-  console.log(form);
   return sendRequest(`${BASE_URL}/add-note/${id}/${idx}`, "POST", form);
 }
