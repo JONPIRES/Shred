@@ -82,7 +82,6 @@ async function editPlan(req, res) {
 
 async function deletePlan(req, res) {
   try {
-    console.log("route was hit");
     await Exercise.findByIdAndDelete(req.params.id);
   } catch (error) {
     console.log(error);

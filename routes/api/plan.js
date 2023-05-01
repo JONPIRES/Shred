@@ -3,16 +3,16 @@ const router = express.Router();
 const planCtrl = require("../../controllers/api/plan");
 const ensureLoggedIn = require("../../config/ensureLoggedIn");
 
-router.get("/", planCtrl.viewPlans);
+router.get("/", ensureLoggedIn, planCtrl.viewPlans);
 
-router.get("/detail/:id", planCtrl.planDetail);
+router.get("/detail/:id", ensureLoggedIn, planCtrl.planDetail);
 
-router.post("/create-plan", planCtrl.createPlan);
+router.post("/create-plan", ensureLoggedIn, planCtrl.createPlan);
 
-router.post("/add-exercise/:id", planCtrl.addExercise);
+router.post("/add-exercise/:id", ensureLoggedIn, planCtrl.addExercise);
 
-router.put("/edit-plan/:id", planCtrl.editPlan);
+router.put("/edit-plan/:id", ensureLoggedIn, planCtrl.editPlan);
 
-router.post("/delete-plan/:id", planCtrl.deletePlan);
+router.post("/delete-plan/:id", ensureLoggedIn, planCtrl.deletePlan);
 
 module.exports = router;
