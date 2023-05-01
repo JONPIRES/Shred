@@ -45,41 +45,42 @@ const WorkoutExerciseCard = ({ exercise, allExercises }) => {
   }
 
   return (
-    <div className=" col-4 mb-4">
-    <div className="card p-2 mb-2 " style={{margin:""}}>
-      <Link to={`/exercise/${exercise.exercise}`} className="link-offset-2 link-offset-3-hover m-1
-                    link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover text-info">
-        <h3 className="text-center my-3 ">{exercise.name}</h3>
-      </Link>
-      <h4 className="text-center">Muscle Group: {exercise.muscleGroup}</h4>
-      
-      <h5 className="text-center">Sets: {exercise.sets}</h5>
-      <h5 className="text-center">Reps: {exercise.reps}</h5>
-      <br />
-      <div className="mx-3 ">
-      <h4 className="text-center">Weight Log</h4>
-      <ul className="list-group">
-        {exercise.notes.map((note, idx) => {
-          return <ExerciseNotes key={note + idx} note={note}/>;
-        })}
-      </ul>
+    <div className="col-lg-4 col-sm-12 col-md-6 mb-4">
+      <div className="card p-2 " style={{width:'19em'}} >
 
+        <Link to={`/exercise/${exercise.exercise}`} className="link-offset-2 link-offset-3-hover m-1
+                    link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover text-info">
+          <h3 className="text-center my-3 ">{exercise.name}</h3>
+        </Link>
+        <h4 className="text-center">Muscle Group: {exercise.muscleGroup}</h4>
+
+        <h5 className="text-center">Sets: {exercise.sets}</h5>
+        <h5 className="text-center">Reps: {exercise.reps}</h5>
+        <br />
+        <div className="mx-3 ">
+          <h4 className="text-center">Weight Log</h4>
+          <ul className="list-group">
+            {exercise.notes.map((note, idx) => {
+              return <ExerciseNotes key={note + idx} note={note} />;
+            })}
+          </ul>
+
+        </div>
+        {exercise.duration ? <h4 className="m-3 text-center">{exercise.duration} minutes</h4> : null}
+        <form onSubmit={handleNoteSubmit} className="form-control my-2">
+          <label className="form-label">New Weight</label>
+          <input onChange={handleChange} type="text" name="notes" className="form-control" />
+          <div className="text-center"><button type="submit" className="btn btn-dark m-1 p-2">
+            Log
+          </button></div>
+
+        </form>
+        <form onSubmit={handleDeleteSubmit} className="text-center m-2">
+          <button  type="submit" className="btn btn-danger p-2">
+            DELETE
+          </button>
+        </form>
       </div>
-      {exercise.duration ? <h4 className="m-3 text-center">{exercise.duration} minutes</h4> : null}
-      <form onSubmit={handleNoteSubmit} className="form-control my-2">
-        <label className="form-label">New Weight</label>
-        <input onChange={handleChange} type="text" name="notes" className="form-control"/>
-        <div className="text-center"><button type="submit" className="btn btn-dark m-1 p-2">
-          Log
-        </button></div>
-        
-      </form>
-      <form onSubmit={handleDeleteSubmit} className="text-end m-2">
-        <button type="submit" className="btn btn-danger p-2">
-          DELETE
-        </button>
-      </form>
-    </div>
     </div>
   );
 };

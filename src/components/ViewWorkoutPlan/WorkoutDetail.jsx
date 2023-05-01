@@ -65,7 +65,7 @@ const WorkoutDetail = ({ user }) => {
             </Link>
           </div>
           <div className="d-flex justify-content-center">
-          <div className="row d-flex ">
+          <div className="row ">
             {planDetail &&
               planDetail.exercise.map((exercise, idx) => {
                 return (
