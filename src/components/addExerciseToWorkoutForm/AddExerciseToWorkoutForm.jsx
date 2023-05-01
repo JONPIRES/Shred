@@ -100,7 +100,7 @@ function AddExerciseToWorkoutPlan() {
           onChange={handleChange}
           className="form-control"
         />
-        <label className="form-label">Notes</label>
+        <label className="form-label">Initial Weight</label>
         <input
           type="text"
           name="notes"
