@@ -7,6 +7,8 @@ module.exports = {
   login,
   checkToken,
   getUser,
+  updateUser,
+  deleteUser,
 };
 
 async function checkToken(req, res) {
@@ -43,12 +45,30 @@ async function login(req, res) {
 }
 
 async function getUser(req, res) {
- try {
-  const exUser = await User.findById(req.params.id)
-  res.send(exUser)
- } catch (error) {
-   throw new Error('get user error')
- }
+  try {
+    const exUser = await User.findById(req.params.id);
+    res.send(exUser);
+  } catch (error) {
+    throw new Error("get user error");
+  }
+}
+
+async function updateUser(req, res) {
+  try {
+    await User.findByIdAndUpdate(req.params.id, req.body);
+  } catch (error) {
+    console.log(error);
+    throw new Error("Update User Error");
+  }
+}
+
+async function deleteUser(req, res) {
+  try {
+    await User.findByIdAndDelete(req.params.id);
+  } catch (error) {
+    console.log(error);
+    throw new Error("Delete Exercise Error");
+  }
 }
 
 /*--- Helper Functions --*/
