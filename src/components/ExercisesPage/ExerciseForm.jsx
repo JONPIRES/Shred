@@ -34,9 +34,9 @@ const ExerciseForm = ({ user }) => {
   return (
     <div>
       <div
-        className="form-container container mt-5 fade-down"
+        className="form-container container mt-5 d-flex justify-content-center align-items-center fade-down"
         style={{ minHeight: "100vh", height: "auto" }}>
-        <form autoComplete="off" onSubmit={handleSubmit}>
+        <form autoComplete="off" onSubmit={handleSubmit} style={{ width: '25em', border: 'solid black 3px', borderRadius: '1.5em' }} className="p-4">
           <label className="form-label">Name:</label>
           <input
             type="text"

@@ -35,14 +35,14 @@ const WorkoutDetail = ({ user }) => {
       <div
         className="row  container-fluid"
         style={{ minHeight: "100vh", height: "auto" }}>
-        <div className="col-lg-2 bg-primary d-flex justify-content-center align-items-center flex-column">
-          <div className="text-center mt-3">
+        <div className="col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: "#243a4f", minHeight: "100vh", height: "auto" }}>
+          <div className="text-center d-flex flex-column">
             {plans.map((plan, idx) => {
               return (
                 <Link
                   key={plan + idx}
                   to={`/workout/${plan._id}`}
-                  className="link-offset-2 link-offset-3-hover m-1
+                  className=" fs-2 link-offset-2 link-offset-3-hover m-1
                         link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover text-light">
                   {plan.name}
                 </Link>
@@ -50,21 +50,22 @@ const WorkoutDetail = ({ user }) => {
             })}
           </div>
         </div>
-        <div className="col-lg-9 container">
+        <div className="col-10 container container-fluid">
           <div className="text-center mt-5 ">
             <h1>{planDetail && planDetail.name}</h1>
-            <h1>{planDetail && planDetail.goals}</h1>
+            <h4>Goals: {planDetail && planDetail.goals}</h4>
             <hr />
           </div>
           <div className="text-center">
             <Link
               to={`/workout/${id}/add-exercise`}
               className="text-center link-offset-2 link-offset-2-hover
-           link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover text-dark">
+                link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover text-dark">
               Add exercise
             </Link>
           </div>
-          <div className="">
+          <div className="d-flex justify-content-center">
+          <div className="row d-flex ">
             {planDetail &&
               planDetail.exercise.map((exercise, idx) => {
                 return (
@@ -75,10 +76,12 @@ const WorkoutDetail = ({ user }) => {
                   />
                 );
               })}
+            </div>
           </div>
         </div>
       </div>
     </div>
+
   );
 };
 
