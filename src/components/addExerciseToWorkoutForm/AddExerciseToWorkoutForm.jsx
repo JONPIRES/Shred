@@ -10,14 +10,16 @@ function AddExerciseToWorkoutPlan() {
   const [exercises, setExercises] = useState([]);
 
   const [exercise, setExercise] = useState({
-    muscleGroup: "",
-    name: "",
     exercise: "",
+    name: "",
+    muscleGroup: "",
     sets: "",
     reps: "",
     duration: "",
     notes: "",
   });
+
+  // now I need to update the schema for the exercise in the plan and also drop the colection in mongo"
 
   function handleChange(e) {
     setExercise({ ...exercise, [e.target.name]: e.target.value });
@@ -33,8 +35,6 @@ function AddExerciseToWorkoutPlan() {
         name: selectedExercise.name,
         exercise: selectedExercise._id,
       });
-    } else {
-      setExercise({ ...exercise, [e.target.name]: e.target.value });
     }
   }
 

@@ -24,6 +24,8 @@ function CreateWorkoutPlan({ user }) {
     try {
       const createPlan = await planAPI.create(plan);
       setPlanID(createPlan._id);
+      // This console.log is helping to trigger the redirect
+      console.log(planId);
     } catch (err) {
       console.log(err);
       setError("Create Plan Failed - Try Again");

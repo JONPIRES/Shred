@@ -56,6 +56,8 @@ async function addExercise(req, res) {
     const plan = await Plan.findById(req.params.id);
     plan.exercise.push({
       exercise: form.exercise,
+      name: form.name,
+      muscleGroup: form.muscleGroup,
       sets: form.sets,
       reps: form.reps,
       duration: form.duration,
@@ -80,7 +82,6 @@ async function editPlan(req, res) {
 
 async function deletePlan(req, res) {
   try {
-    console.log("route was hit");
     await Exercise.findByIdAndDelete(req.params.id);
   } catch (error) {
     console.log(error);
