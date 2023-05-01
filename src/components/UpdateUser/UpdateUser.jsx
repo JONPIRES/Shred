@@ -1,74 +1,93 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import * as usersAPI from "../../utilities/users-api"
+import * as usersAPI from "../../utilities/users-api";
 
-function UpdateUser({ user }) {
-    const { id } = useParams();
+function UpdateUser({ user, setUser }) {
+  const [updateUser, setUpdateUser] = useState({
+    name: user.name,
+    email: user.email,
+    password: "",
+    confirm: "",
+    error: "",
+    id: user._id,
+  });
 
-    const [updateUser, setUpdateUser] = useState({
-        name: "",
-        email: "",
-        password: "",
-        id: user._id,
-    })
+  const [error, setError] = useState("");
 
-    const [error, setError] = useState("");
+  function handleChange(e) {
+    setUpdateUser({ ...updateUser, [e.target.name]: e.target.value });
+    setError("");
+  }
 
-    function handleChange(e) {
-        setUpdateUser({ ...updateUser, [e.target.name]: e.target.value });
-        setError("")
+  async function handleSubmit(e) {
+    e.preventDefault();
+    window.location.replace("/");
+
+    try {
+      const { name, email, password, id } = updateUser;
+      const form = { name, email, password, id };
+
+      const userUpdate = await usersAPI.updateUser(form);
+      setUser(userUpdate);
+    } catch (error) {
+      console.log(error);
     }
-
-    async function fetchUsers() {
-        const currentUser = await usersAPI.update(updateUser)
-        setUpdateUser(currentUser)
-    }
-
-    useEffect(() => {
-        fetchUsers()
-    }, [])
-
-    async function handleSubmit(e) {
-        e.preventDefault();
-        // window.location.replace("/")
-
-        try {
-            await usersAPI.update(updateUser)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    return (
-        <div className="UpdateUser container">
-            <h1 className="text-center mt-5"> Edit <span className="text-info">{user.name}</span></h1>
-            <div className="container mt-5" style={{ minHeight: "100vh", height: "auto" }}>
-                <form autoComplete="off" onSubmit={handleSubmit}>
-                    <label className="form-label">Username: </label>
-                    <input
-                        type="text"
-                        name="name"
-                        value={updateUser.name}
-                        onChange={handleChange}
-                        className="form-control"
-                    />
-
-                    <label className="form-label">E-mail: </label>
-                    <input
-                        type="text"
-                        name="email"
-                        value={updateUser.email}
-                        onChange={handleChange}
-                        className="form-control" />
-                    <div className="text-center"><button className="btn btn-primary text-center mt-5">Update</button></div>
-                    
-
-
-                </form>
-
-            </div>
-        </div>
-    )
+  }
+  const disable = updateUser.password !== updateUser.confirm;
+  return (
+    <div
+      style={{ minHeight: "100vh", height: "auto", marginTop: "10em" }}
+      className=" container container-fluid">
+      <div className="container-fluid container ">
+        <h1>Update {user?.name}</h1>
+        <form autoComplete="off" onSubmit={handleSubmit}>
+          <label className="form-label">Name</label>
+          <input
+            type="text"
+            name="name"
+            value={updateUser.name}
+            onChange={handleChange}
+            required
+            className="form-control"
+          />
+          <label className="form-label">Email</label>
+          <input
+            type="email"
+            name="email"
+            value={updateUser.email}
+            onChange={handleChange}
+            required
+            className="form-control"
+          />
+          <label className="form-label">Password</label>
+          <input
+            type="password"
+            name="password"
+            value={updateUser.password}
+            onChange={handleChange}
+            required
+            className="form-control"
+          />
+          <label className="form-label">Confirm</label>
+          <input
+            type="password"
+            name="confirm"
+            value={updateUser.confirm}
+            onChange={handleChange}
+            required
+            className="form-control"
+          />
+          <button
+            type="submit"
+            disabled={disable}
+            className="btn btn-dark mt-3">
+            Update
+          </button>
+        </form>
+      </div>
+      <p className="error-message text-dark">&nbsp;{updateUser.error}</p>
+    </div>
+  );
 }
 
 export default UpdateUser;

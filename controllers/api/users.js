@@ -53,6 +53,7 @@ async function getUser(req, res) {
   }
 }
 
+// Refference StackUp on how to bcrypt the password and compare hash with signup
 async function updateUser(req, res) {
   try {
     await User.findByIdAndUpdate(req.params.id, req.body);
