@@ -15,8 +15,7 @@ import CreateWorkoutPlan from "../../components/CreateWorkoutPlan/CreateWorkoutP
 import ViewWorkoutPlan from "../../components/ViewWorkoutPlan/ViewWorkoutPlan";
 import AddExerciseToWorkoutPlan from "../../components/addExerciseToWorkoutForm/AddExerciseToWorkoutForm";
 import WorkoutDetail from "../../components/ViewWorkoutPlan/WorkoutDetail";
-import UpdateUser from "../../components/UpdateUser/UpdateUser"
-
+import UpdateUser from "../../components/UpdateUser/UpdateUser";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -44,7 +43,9 @@ export default function App() {
           />
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
-          <Route path="/profile/:id" element={<UpdateUser user={user}/>}></Route>
+          <Route
+            path="/profile/:id"
+            element={<UpdateUser user={user} setUser={setUser} />}></Route>
           <Route path="/" element={<HomePage />} />
           <Route path="/workout/:id" element={<WorkoutDetail user={user} />} />
           <Route

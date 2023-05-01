@@ -18,13 +18,11 @@ function CreateWorkoutPlan({ user }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    window.location.replace(`/workout/${planId}`);
-
     try {
       const createPlan = await planAPI.create(plan);
-      setPlanID(createPlan._id);
-      // This console.log is helping to trigger the redirect
-      console.log(planId);
+      const newId = createPlan._id;
+      setPlanID(newId);
+      window.location.replace(`/workout/${newId}`);
     } catch (err) {
       console.log(err);
       setError("Create Plan Failed - Try Again");
@@ -37,7 +35,15 @@ function CreateWorkoutPlan({ user }) {
       style={{ minHeight: "100vh", height: "auto" }}>
       <div className="container container-fluid d-flex flex-column justify-content-center align-items-center mt-2">
         <h1 className="mt-3 text-center">Create Workout Plan</h1>
-        <form autoComplete="off" onSubmit={handleSubmit} style={{ width: '25em', border: 'solid black 3px', borderRadius: '1.5em' }} className="p-4">
+        <form
+          autoComplete="off"
+          onSubmit={handleSubmit}
+          style={{
+            width: "25em",
+            border: "solid black 3px",
+            borderRadius: "1.5em",
+          }}
+          className="p-4">
           <label className="form-label">Name:</label>
           <input
             type="text"

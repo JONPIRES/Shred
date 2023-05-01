@@ -61,7 +61,14 @@ function AddExerciseToWorkoutPlan() {
       style={{ minHeight: "100vh", height: "auto" }}>
       <h1 className="text-center mt-5"> Add Exercise</h1>
       <br />
-      <form onSubmit={handleSubmit} style={{ width: '25em', border: 'solid black 3px', borderRadius: '1.5em' }} className="p-4">
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          width: "25em",
+          border: "solid black 3px",
+          borderRadius: "1.5em",
+        }}
+        className="p-4">
         <label className="form-label">Exercise</label> <br />
         <select name="exercise" onChange={handleSelectChange}>
           <option disabled selected="selected">
@@ -100,7 +107,7 @@ function AddExerciseToWorkoutPlan() {
           onChange={handleChange}
           className="form-control"
         />
-        <label className="form-label">Initial Weight</label>
+        <label className="form-label">Initial Weight (lbs)</label>
         <input
           type="text"
           name="notes"

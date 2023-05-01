@@ -2,6 +2,8 @@ const jwt = require("jsonwebtoken");
 const User = require("../../models/user");
 const bcrypt = require("bcrypt");
 
+const SALT_ROUNDS = 6;
+
 module.exports = {
   create,
   login,
@@ -56,7 +58,20 @@ async function getUser(req, res) {
 // Refference StackUp on how to bcrypt the password and compare hash with signup
 async function updateUser(req, res) {
   try {
-    await User.findByIdAndUpdate(req.params.id, req.body);
+    const form = req.body;
+    const userFound = await User.exists({ email: form.email });
+
+    if (userFound) {
+      return res.redirect("/login");
+    }
+    hash = await bcrypt.hash(form.password, SALT_ROUNDS);
+    form.password = hash;
+
+    const updatedUser = await User.findByIdAndUpdate(req.params.id, form, {
+      new: true,
+    });
+    console.log(updatedUser);
+    res.send(updatedUser);
   } catch (error) {
     console.log(error);
     throw new Error("Update User Error");
