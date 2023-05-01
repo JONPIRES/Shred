@@ -55,6 +55,7 @@ const WorkoutDetail = ({ user }) => {
         <div className="col-lg-9 container">
           <div className="text-center mt-5 ">
             <h1>{planDetail && planDetail.name}</h1>
+            <h1>{planDetail && planDetail.goals}</h1>
             <hr />
           </div>
           <div className="text-center">
@@ -68,7 +69,18 @@ const WorkoutDetail = ({ user }) => {
           <div className="">
             {planDetail &&
               planDetail.exercise.map((exercise) => {
-                return <h1>{exercise.notes}</h1>;
+                return (
+                  <>
+                    <Link to={`/exercise/${exercise.exercise}`}>
+                      <h1>{exercise.name}</h1>
+                    </Link>
+                    <h1>{exercise.muscleGroup}</h1>
+                    <h1>{exercise.sets}</h1>
+                    <h1>{exercise.reps}</h1>
+                    <h1>{exercise.notes}</h1>
+                    {exercise.duration ? <h1>{exercise.duration}</h1> : null}
+                  </>
+                );
               })}
           </div>
         </div>

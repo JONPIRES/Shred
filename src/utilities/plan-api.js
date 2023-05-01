@@ -17,10 +17,10 @@ export async function detail(planID) {
   return sendRequest(`${BASE_URL}/detail/${planID}`);
 }
 
-// export async function deleteExercise(exerciseId) {
-//   return sendRequest(`${BASE_URL}/delete-exercise/${exerciseId}`, "POST");
-// }
+export async function deletePlan(planId) {
+  return sendRequest(`${BASE_URL}/delete-plan/${planId}`, "POST");
+}
 
-// export async function update(form) {
-//   return sendRequest(`${BASE_URL}/edit-exercise/${form._id}`, "PUT", form);
-// }
+export async function update(form) {
+  return sendRequest(`${BASE_URL}/edit-plan/${form._id}`, "PUT", form);
+}
