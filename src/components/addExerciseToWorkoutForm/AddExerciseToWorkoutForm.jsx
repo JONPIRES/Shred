@@ -57,11 +57,11 @@ function AddExerciseToWorkoutPlan() {
 
   return (
     <div
-      className="container container-fluid"
+      className="container container-fluid d-flex flex-column justify-content-center align-items-center mt-2"
       style={{ minHeight: "100vh", height: "auto" }}>
       <h1 className="text-center mt-5"> Add Exercise</h1>
       <br />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{ width: '25em', border: 'solid black 3px', borderRadius: '1.5em' }} className="p-4">
         <label className="form-label">Exercise</label> <br />
         <select name="exercise" onChange={handleSelectChange}>
           <option disabled selected="selected">

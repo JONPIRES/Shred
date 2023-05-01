@@ -34,8 +34,8 @@ export default function LoginForm({ setUser }) {
 
   return (
     <div className="container container-fluid " style={{ minHeight: '100vh', height: 'auto', marginTop: '10em' }}>
-      <div className="container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
+      <div className="container d-flex justify-content-center align-items-center mt-2" >
+        <form autoComplete="off" onSubmit={handleSubmit} style={{ width: '25em', border: 'solid black 3px', borderRadius: '1.5em' }} className="p-4">
           <label className="form-label">Email</label>
           <input
             type="text"
