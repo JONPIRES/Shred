@@ -2,10 +2,15 @@ const jwt = require("jsonwebtoken");
 const User = require("../../models/user");
 const bcrypt = require("bcrypt");
 
+const SALT_ROUNDS = 6;
+
 module.exports = {
   create,
   login,
   checkToken,
+  getUser,
+  updateUser,
+  deleteUser,
 };
 
 async function checkToken(req, res) {
@@ -38,6 +43,47 @@ async function login(req, res) {
     }
   } catch (err) {
     res.status(400).json(err);
+  }
+}
+
+async function getUser(req, res) {
+  try {
+    const exUser = await User.findById(req.params.id);
+    res.send(exUser);
+  } catch (error) {
+    throw new Error("get user error");
+  }
+}
+
+// Refference StackUp on how to bcrypt the password and compare hash with signup
+async function updateUser(req, res) {
+  try {
+    const form = req.body;
+    const userFound = await User.exists({ email: form.email });
+
+    if (userFound) {
+      return res.redirect("/login");
+    }
+    hash = await bcrypt.hash(form.password, SALT_ROUNDS);
+    form.password = hash;
+
+    const updatedUser = await User.findByIdAndUpdate(req.params.id, form, {
+      new: true,
+    });
+    console.log(updatedUser);
+    res.send(updatedUser);
+  } catch (error) {
+    console.log(error);
+    throw new Error("Update User Error");
+  }
+}
+
+async function deleteUser(req, res) {
+  try {
+    await User.findByIdAndDelete(req.params.id);
+  } catch (error) {
+    console.log(error);
+    throw new Error("Delete Exercise Error");
   }
 }
 

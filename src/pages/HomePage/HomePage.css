@@ -1,0 +1,40 @@
+.homepage{
+    min-height:100vh;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+}
+
+.homepage p{
+    text-align: justify;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-pulse {
+  animation: pulse 1s infinite;
+}
+
+@keyframes text-fade-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-down {
+  animation-name: text-fade-in;
+  animation-duration: 0.36s;
+  animation-fill-mode: forwards;
+}
+
+
