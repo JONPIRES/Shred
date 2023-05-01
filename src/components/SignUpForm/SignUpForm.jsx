@@ -39,7 +39,7 @@ export default class SignUpForm extends Component {
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
-      <div style={{ minHeight: '100vh', height: 'auto', marginTop:'10em'}} className=" container container-fluid">
+      <div style={{ minHeight: '100vh', height: 'auto', marginTop:'10em'}} className=" container container-fluid fade-down">
         <div className="container-fluid container ">
           <form autoComplete="off" onSubmit={this.handleSubmit}>
             <label className="form-label">Name</label>

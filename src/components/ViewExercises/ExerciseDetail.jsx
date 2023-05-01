@@ -35,6 +35,9 @@ const ExerciseDetail = ({ user }) => {
 
   useEffect(() => {
     fetchExercise();
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth'});
   }, []);
 
   return (

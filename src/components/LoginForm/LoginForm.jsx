@@ -33,7 +33,7 @@ export default function LoginForm({ setUser }) {
   }
 
   return (
-    <div className="container container-fluid " style={{ minHeight: '100vh', height: 'auto', marginTop: '10em' }}>
+    <div className="container container-fluid fade-down" style={{ minHeight: '100vh', height: 'auto', marginTop: '10em' }}>
       <div className="container">
         <form autoComplete="off" onSubmit={handleSubmit}>
           <label className="form-label">Email</label>

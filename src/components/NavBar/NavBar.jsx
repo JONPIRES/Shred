@@ -16,7 +16,7 @@ export default function NavBar({ user, setUser }) {
             <Link
               to="/"
               className="text-light link-offset-2 link-offset-3-hover
-       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover navbar-brand navbar-heading">
+       link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover navbar-brand navbar-heading shred-bounce ">
               SHRED
             </Link>
 

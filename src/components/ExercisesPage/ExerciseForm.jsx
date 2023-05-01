@@ -34,7 +34,7 @@ const ExerciseForm = ({ user }) => {
   return (
     <div>
       <div
-        className="form-container container mt-5"
+        className="form-container container mt-5 fade-down"
         style={{ minHeight: "100vh", height: "auto" }}>
         <form autoComplete="off" onSubmit={handleSubmit}>
           <label className="form-label">Name:</label>
@@ -91,7 +91,7 @@ const ExerciseForm = ({ user }) => {
             style={{ textTransform: "capitalize" }}
             // style="text-transform:capitalize"
           />
-          <button type="submit" className="btn btn-dark mt-2">
+          <button type="submit" className="btn btn-dark mt-2 btn-pulse">
             Create Exercise{" "}
           </button>
         </form>

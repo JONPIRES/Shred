@@ -21,7 +21,7 @@ function ViewWorkoutPlan({ user }) {
         className="row  container-fluid"
         style={{ minHeight: "100vh", height: "auto" }}>
         <div
-          className="col-lg-2 d-flex justify-content-center align-items-center flex-column"
+          className="col-lg-2 d-flex justify-content-center align-items-center flex-column fade-down"
           style={{ backgroundColor: "#243a4f" }}>
           <div className="text-center mt-3">
             {plan.map((plan, idx) =>
@@ -37,7 +37,7 @@ function ViewWorkoutPlan({ user }) {
             )}
           </div>
         </div>
-        <div className="col-lg-9 container">
+        <div className="col-lg-9 container fade-down">
           <div className="text-center mt-5 ">
             <h1>Name Of Workout</h1>
             <hr />
