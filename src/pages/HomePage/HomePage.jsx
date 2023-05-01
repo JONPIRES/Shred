@@ -6,7 +6,7 @@ function HomePage() {
   return (
     <div className="homepage d-flex" style={{ backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/007/768/103/original/one-continuous-line-drawing-of-young-sporty-man-working-out-with-crossover-cable-machine-in-fitness-gym-club-center-healthy-fitness-sport-concept-dynamic-single-line-draw-design-illustration-vector.jpg")` }}>
       
-        <div className="container-fluid container d-flex flex-column mt-5" style={{marginLeft:'5em'}}>
+        <div className="container-fluid container d-flex flex-column mt-5 fade-down" style={{marginLeft:'5em'}}>
           <div className="row flex-column container-fluid">
             <div className="col-5 mt-5 ms-5">
             <p className="text-justify fs-4">Welcome to <span className="text-danger fs-2" >SHRED</span>, where we are committed to helping you achieve your fitness goals. 
@@ -19,7 +19,7 @@ function HomePage() {
           </div>
 
           <div className=" container-fluid text-center d-flex mt-5 mb-5" style={{}}>
-            <p className="border border-dark bg-light text-center fs-2 mt-4" style={{padding:'25px 50px', marginLeft:'1.1em', borderRadius:'0.5em'}}>SHRED YOUR GOALS TODAY <span><Link className="btn btn-dark tex-light ms-3 fs-3" to="/signup"> SIGN UP </Link></span></p>
+            <p className="border border-dark bg-light text-center fs-2 mt-4" style={{padding:'25px 50px', marginLeft:'1.1em', borderRadius:'0.5em'}}>SHRED YOUR GOALS TODAY <span><Link className="btn btn-dark tex-light ms-3 fs-3 btn-pulse" to="/signup"> SIGN UP </Link></span></p>
           </div>
         </div>
      

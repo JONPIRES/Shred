@@ -33,7 +33,7 @@ function CreateWorkoutPlan({ user }) {
 
   return (
     <div
-      className="edit-workout-plan"
+      className="edit-workout-plan fade-down"
       style={{ minHeight: "100vh", height: "auto" }}>
       <div className="container container-fluid d-flex flex-column justify-content-center align-items-center mt-2">
         <h1 className="mt-3 text-center">Create Workout Plan</h1>
@@ -45,6 +45,7 @@ function CreateWorkoutPlan({ user }) {
             onChange={handleChange}
             required
             className="form-control"
+            style={{ textTransform: "capitalize" }}
           />
           <label className="form-label">Goals:</label>
           <input
@@ -53,9 +54,10 @@ function CreateWorkoutPlan({ user }) {
             onChange={handleChange}
             required
             className="form-control"
+            style={{ textTransform: "capitalize" }}
           />
 
-          <button type="submit" className="btn btn-dark mt-2">
+          <button type="submit" className="btn btn-dark mt-2 btn-pulse">
             Create Workout Plan
           </button>
         </form>

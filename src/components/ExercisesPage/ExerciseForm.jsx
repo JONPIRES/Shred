@@ -34,7 +34,7 @@ const ExerciseForm = ({ user }) => {
   return (
     <div>
       <div
-        className="form-container container mt-5 d-flex justify-content-center align-items-center"
+        className="form-container container mt-5 d-flex justify-content-center align-items-center fade-down"
         style={{ minHeight: "100vh", height: "auto" }}>
         <form autoComplete="off" onSubmit={handleSubmit} style={{ width: '25em', border: 'solid black 3px', borderRadius: '1.5em' }} className="p-4">
           <label className="form-label">Name:</label>
@@ -45,6 +45,7 @@ const ExerciseForm = ({ user }) => {
             onChange={handleChange}
             required
             className="form-control"
+            style={{ textTransform: "capitalize" }}
             // style="text-transform:capitalize"
           />
           <label className="form-label">Muscle Group:</label>
@@ -55,6 +56,7 @@ const ExerciseForm = ({ user }) => {
             onChange={handleChange}
             required
             className="form-control"
+            style={{ textTransform: "capitalize" }}
             // style="text-transform:capitalize"
           />
           <label className="form-label">Equipment:</label>
@@ -65,6 +67,7 @@ const ExerciseForm = ({ user }) => {
             onChange={handleChange}
             required
             className="form-control"
+            style={{ textTransform: "capitalize" }}
             // style="text-transform:capitalize"
           />
           <label className="form-label">Image URL:</label>
@@ -75,6 +78,7 @@ const ExerciseForm = ({ user }) => {
             onChange={handleChange}
             required
             className="form-control"
+            
           />
           <label className="form-label">Explanation:</label>
           <input
@@ -84,9 +88,10 @@ const ExerciseForm = ({ user }) => {
             onChange={handleChange}
             required
             className="form-control"
+            style={{ textTransform: "capitalize" }}
             // style="text-transform:capitalize"
           />
-          <button type="submit" className="btn btn-dark mt-2">
+          <button type="submit" className="btn btn-dark mt-2 btn-pulse">
             Create Exercise{" "}
           </button>
         </form>

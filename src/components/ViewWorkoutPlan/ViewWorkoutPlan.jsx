@@ -21,7 +21,7 @@ function ViewWorkoutPlan({ user }) {
         className="row  container-fluid"
         style={{ minHeight: "100vh", height: "auto" }}>
         <div
-          className="col-2 d-flex justify-content-center align-items-center flex-column"
+          className="col-2 d-flex justify-content-center align-items-center flex-column fade-down"
           style={{ backgroundColor: "#243a4f", minHeight: "100vh", height: "auto" }}>
           <div className="text-center mt-3 d-flex flex-column">
             {plan.map((plan, idx) =>

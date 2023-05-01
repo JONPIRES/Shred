@@ -15,7 +15,7 @@ const ExerciseCard = ({ img, name, muscle, equipment, id, user }) => {
     fetchCreator();
   }, []);
   return (
-    <div className="col-lg-4 col-md-6 mb-4">
+    <div className="col-lg-4 col-md-6 mb-4 fade-down">
       <div
         className="card container container-fluid"
         style={{ height: "35em" }}>

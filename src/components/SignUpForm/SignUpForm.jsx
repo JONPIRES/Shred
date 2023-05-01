@@ -39,7 +39,7 @@ export default class SignUpForm extends Component {
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
-      <div style={{ minHeight: '100vh', height: 'auto', marginTop:'10em'}} className=" container container-fluid">
+      <div style={{ minHeight: '100vh', height: 'auto', marginTop:'10em'}} className=" container container-fluid fade-down">
         <div className="container-fluid container d-flex justify-content-center align-items-center mt-2">
           <form autoComplete="off" onSubmit={this.handleSubmit} style={{width:'25em', border:'solid black 3px', borderRadius:'1.5em'}} className="p-4">
             <label className="form-label">Name</label>
