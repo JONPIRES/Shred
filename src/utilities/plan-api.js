@@ -24,3 +24,7 @@ export async function deletePlan(planId) {
 export async function update(form) {
   return sendRequest(`${BASE_URL}/edit-plan/${form._id}`, "PUT", form);
 }
+
+export async function updateNotes(id, index) {
+  return sendRequest(`${BASE_URL}/delete-exercise/${id}/${index}`, "POST");
+}

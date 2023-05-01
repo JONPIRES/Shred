@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as planAPI from "../../utilities/plan-api";
-import * as exercisesAPI from "../../utilities/exercises-api";
 import { Link, useParams } from "react-router-dom";
+import WorkoutExerciseCard from "../addExerciseToWorkoutForm/WorkoutExerciseCard";
 
 const WorkoutDetail = ({ user }) => {
   const { id } = useParams();
@@ -17,20 +17,18 @@ const WorkoutDetail = ({ user }) => {
       setPlanDetail(plan);
     }
   }
+  async function fetchPlan() {
+    const plans = await planAPI.get();
+    setPlan(plans);
+  }
 
   useEffect(() => {
     fetchDetail();
   }, [id]);
 
   useEffect(() => {
-    async function fetchPlan() {
-      const plans = await planAPI.get();
-      setPlan(plans);
-    }
     fetchPlan();
   }, []);
-
-  console.log(planDetail);
 
   return (
     <div className="" style={{ minHeight: "100vh", height: "auto" }}>
@@ -68,18 +66,13 @@ const WorkoutDetail = ({ user }) => {
           </div>
           <div className="">
             {planDetail &&
-              planDetail.exercise.map((exercise) => {
+              planDetail.exercise.map((exercise, idx) => {
                 return (
-                  <>
-                    <Link to={`/exercise/${exercise.exercise}`}>
-                      <h1>{exercise.name}</h1>
-                    </Link>
-                    <h1>{exercise.muscleGroup}</h1>
-                    <h1>{exercise.sets}</h1>
-                    <h1>{exercise.reps}</h1>
-                    <h1>{exercise.notes}</h1>
-                    {exercise.duration ? <h1>{exercise.duration}</h1> : null}
-                  </>
+                  <WorkoutExerciseCard
+                    allExercises={planDetail.exercise}
+                    exercise={exercise}
+                    key={exercise + idx}
+                  />
                 );
               })}
           </div>
