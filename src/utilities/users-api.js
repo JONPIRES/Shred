@@ -12,6 +12,14 @@ export function checkToken() {
   return sendRequest(`${BASE_URL}/check-token`);
 }
 
-export function get(user) {
-  return sendRequest(`${BASE_URL}/get-user/${user}`)
+export function get(userId) {
+  return sendRequest(`${BASE_URL}/get-user/${userId}`);
+}
+
+export async function update(user) {
+  return sendRequest(`${BASE_URL}/update-user/${user._id}`, "POST", user);
+}
+
+export async function deleteUser(user) {
+  return sendRequest(`${BASE_URL}/delete-user/${user._id}`, "POST");
 }
