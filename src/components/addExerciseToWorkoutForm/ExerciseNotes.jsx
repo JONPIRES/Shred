@@ -3,7 +3,7 @@ import React from "react";
 function ExerciseNotes({ note }) {
   return (
     <>
-      <li>{note}</li>
+      <li className="list-group-item">{note} lbs</li>
     </>
   );
 }

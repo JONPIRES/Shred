@@ -21,9 +21,9 @@ function ViewWorkoutPlan({ user }) {
         className="row  container-fluid"
         style={{ minHeight: "100vh", height: "auto" }}>
         <div
-          className="col-lg-2 d-flex justify-content-center align-items-center flex-column"
-          style={{ backgroundColor: "#243a4f" }}>
-          <div className="text-center mt-3">
+          className="col-2 d-flex justify-content-center align-items-center flex-column"
+          style={{ backgroundColor: "#243a4f", minHeight: "100vh", height: "auto" }}>
+          <div className="text-center mt-3 d-flex flex-column">
             {plan.map((plan, idx) =>
               user._id === plan.user ? (
                 <Link
@@ -37,7 +37,7 @@ function ViewWorkoutPlan({ user }) {
             )}
           </div>
         </div>
-        <div className="col-lg-9 container">
+        <div className="col-9 container">
           <div className="">{/* Include a sample workout here */}</div>
         </div>
       </div>

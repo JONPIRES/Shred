@@ -41,9 +41,9 @@ function UpdateUser({ user }) {
 
     return (
         <div className="UpdateUser container">
+            <div className="container mt-5 d-flex flex-column justify-content-center align-items-center mt-2" style={{ minHeight: "100vh", height: "auto" }}>
             <h1 className="text-center mt-5"> Edit <span className="text-info">{user.name}</span></h1>
-            <div className="container mt-5" style={{ minHeight: "100vh", height: "auto" }}>
-                <form autoComplete="off" onSubmit={handleSubmit}>
+                <form autoComplete="off" onSubmit={handleSubmit} style={{ width: '25em', border: 'solid black 3px', borderRadius: '1.5em' }} className="p-4">
                     <label className="form-label">Username: </label>
                     <input
                         type="text"
