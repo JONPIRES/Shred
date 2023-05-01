@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as planAPI from "../../utilities/plan-api";
 import { Link, useParams } from "react-router-dom";
 
@@ -8,6 +8,7 @@ const WorkoutExerciseCard = ({ exercise, allExercises }) => {
   const [newNote, setNewNote] = useState({
     notes: "",
   });
+  const [allNotes, setAllNotes] = useState([exercise.notes]);
 
   let index = allExercises.indexOf(exercise);
 
@@ -17,9 +18,11 @@ const WorkoutExerciseCard = ({ exercise, allExercises }) => {
 
   async function handleNoteSubmit(e) {
     e.preventDefault();
-    window.location.replace(`/workout`);
+    window.location.replace(`/workout/${id}`);
     try {
-      await planAPI.addNote(id, newNote, index);
+      let createdNote = await planAPI.addNote(id, newNote, index);
+      setAllNotes([...allNotes, createdNote]);
+      console.log(allNotes);
     } catch (err) {
       console.log(err);
     }

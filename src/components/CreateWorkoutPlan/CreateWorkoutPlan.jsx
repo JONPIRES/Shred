@@ -18,9 +18,8 @@ function CreateWorkoutPlan({ user }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (planId) {
-      window.location.replace(`/workout/${planId}`);
-    }
+    window.location.replace(`/workout/${planId}`);
+
     try {
       const createPlan = await planAPI.create(plan);
       setPlanID(createPlan._id);
