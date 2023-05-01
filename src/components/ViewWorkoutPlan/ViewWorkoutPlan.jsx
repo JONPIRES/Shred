@@ -30,15 +30,15 @@ function ViewWorkoutPlan({ user }) {
                   key={plan + idx}
                   to={`/workout/${plan._id}`}
                   className="link-offset-2 link-offset-3-hover m-1
-                    link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover text-light">
+                    link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover text-light fs-2">
                   {plan.name}
                 </Link>
               ) : null
             )}
           </div>
         </div>
-        <div className="col-9 container">
-          <div className="">{/* Include a sample workout here */}</div>
+        <div className="col-9 container d-flex justify-content-center align-items-center">
+          <div className="text-center fs-2">Click on a workout <br /> OR <br /> if you havent made one <br /><Link to='/workout/create'>Click Here</Link></div>
         </div>
       </div>
     </div>
