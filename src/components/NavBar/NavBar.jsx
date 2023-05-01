@@ -1,7 +1,23 @@
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
 import "../NavBar/navbar.css";
+import * as usersAPI from "../../utilities/users-api";
+
 export default function NavBar({ user, setUser }) {
+
+  const { id } = useParams();
+
+  async function fetchUsers() {
+    const user = await usersAPI.update(id)
+    setUser(user)
+  }
+
+  useEffect(() => {
+    fetchUsers()
+  }, [])
+
   function handleLogout() {
     userService.logout();
     setUser(null);
@@ -73,6 +89,12 @@ export default function NavBar({ user, setUser }) {
                 {user && user.name}{" "}
               </Link>
               <div className="dropdown-menu">
+                <div >
+                  <Link 
+                  className="dropdown-item"
+                    to={`/profile/${user._id}`}>Update Profile</Link>
+                </div>
+
                 <div>
                   <Link
                     className="dropdown-item "
