@@ -38,10 +38,6 @@ function ViewWorkoutPlan({ user }) {
           </div>
         </div>
         <div className="col-lg-9 container">
-          <div className="text-center mt-5 ">
-            <h1>Name Of Workout</h1>
-            <hr />
-          </div>
           <div className="">{/* Include a sample workout here */}</div>
         </div>
       </div>

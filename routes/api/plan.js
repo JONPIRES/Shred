@@ -15,4 +15,6 @@ router.put("/edit-plan/:id", ensureLoggedIn, planCtrl.editPlan);
 
 router.post("/delete-plan/:id", ensureLoggedIn, planCtrl.deletePlan);
 
+router.post("/add-note/:id/:idx", ensureLoggedIn, planCtrl.addNote);
+
 module.exports = router;
