@@ -5,7 +5,9 @@ import { Link, useParams } from "react-router-dom";
 const WorkoutExerciseCard = ({ exercise, allExercises }) => {
   const { id } = useParams();
 
-  const [newNote, setNewNote] = useState("");
+  const [newNote, setNewNote] = useState({
+    notes: "",
+  });
 
   let index = allExercises.indexOf(exercise);
 
@@ -15,9 +17,9 @@ const WorkoutExerciseCard = ({ exercise, allExercises }) => {
 
   async function handleNoteSubmit(e) {
     e.preventDefault();
-    window.location.replace(`workout/${id}`);
+    window.location.replace(`/workout`);
     try {
-      await planAPI.updateNotes(id, index);
+      await planAPI.addNote(id, newNote, index);
     } catch (err) {
       console.log(err);
     }
@@ -29,7 +31,7 @@ const WorkoutExerciseCard = ({ exercise, allExercises }) => {
     // e.preventDefault();
     // window.location.replace(`workout/${id}`);
     // try {
-    //   await planAPI.updateNotes(id, index);
+    //   await planAPI.deleteNote(id, index);
     // } catch (err) {
     //   console.log(err);
     // }
@@ -51,8 +53,11 @@ const WorkoutExerciseCard = ({ exercise, allExercises }) => {
         </button>
       </form>
       <form onSubmit={handleNoteSubmit}>
-        <label htmlFor="">Log New Weight</label>
+        <label htmlFor="">New Weight</label>
         <input onChange={handleChange} type="text" name="notes" />
+        <button type="submit" className="btn btn-dark m-1 p-2">
+          Log
+        </button>
       </form>
     </>
   );
