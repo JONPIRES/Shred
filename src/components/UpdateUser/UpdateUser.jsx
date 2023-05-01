@@ -21,7 +21,7 @@ function UpdateUser({ user, setUser }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    window.location.replace("/");
+    // window.location.replace("/");
 
     try {
       const { name, email, password, id } = updateUser;

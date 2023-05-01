@@ -48,8 +48,6 @@ Future Editions:
 
 - Be able to add pre-set workouts that a user can choose from
 - Add trainers to the app and give them admin
-- Be able to link external api with trending stocks
-- Be able to see all of specific users posts
 - Create a time out if user is inactive for a specific amount of time during their session or if their tab is closed
 - Be able to edit comments created by their own user
 
@@ -60,8 +58,8 @@ Future Editions:
 Jonathan Pires
 Github: https://github.com/JONPIRES
 
-Ahmad Ismael
-Github: https://github.com/ahmadkismael
+Loenardo Rodriguez
+Github: https://github.com/leovre
 
-Wylie Troy
-Github: https://github.com/wylietroy
+David Velasquez
+Github: https://github.com/davidxv15
