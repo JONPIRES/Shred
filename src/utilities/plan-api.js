@@ -9,8 +9,8 @@ export async function addExercise(form, id) {
   return sendRequest(`${BASE_URL}/add-exercise/${id}`, "POST", form);
 }
 
-export async function get() {
-  return sendRequest(BASE_URL);
+export async function get(id) {
+  return sendRequest(`${BASE_URL}/${id}`);
 }
 
 export async function detail(planID) {

@@ -61,8 +61,8 @@ async function updateUser(req, res) {
     const form = req.body;
     const userFound = await User.exists({ email: form.email });
 
-    if (userFound) {
-      return res.redirect("/login");
+    if (!userFound) {
+      throw new Error("User not found");
     }
     hash = await bcrypt.hash(form.password, SALT_ROUNDS);
     form.password = hash;

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import * as usersAPI from "../../utilities/users-api";
 
 function UpdateUser({ user, setUser }) {
+  const navigate = useNavigate();
   const [updateUser, setUpdateUser] = useState({
     name: user.name,
     email: user.email,
@@ -21,7 +22,6 @@ function UpdateUser({ user, setUser }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // window.location.replace("/");
 
     try {
       const { name, email, password, id } = updateUser;
@@ -29,6 +29,7 @@ function UpdateUser({ user, setUser }) {
 
       const userUpdate = await usersAPI.updateUser(form);
       setUser(userUpdate);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }

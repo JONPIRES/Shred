@@ -3,7 +3,7 @@ const router = express.Router();
 const planCtrl = require("../../controllers/api/plan");
 const ensureLoggedIn = require("../../config/ensureLoggedIn");
 
-router.get("/", ensureLoggedIn, planCtrl.viewPlans);
+router.get("/:1d", ensureLoggedIn, planCtrl.viewPlans);
 
 router.get("/detail/:id", ensureLoggedIn, planCtrl.planDetail);
 

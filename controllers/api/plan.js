@@ -14,7 +14,7 @@ module.exports = {
 
 async function viewPlans(req, res) {
   try {
-    const plans = await Plan.find({});
+    const plans = await Plan.find({ user: req.params.id });
     res.send(plans);
   } catch (err) {
     console.log(err);

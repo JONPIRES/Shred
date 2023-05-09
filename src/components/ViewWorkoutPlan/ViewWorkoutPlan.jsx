@@ -8,7 +8,7 @@ function ViewWorkoutPlan({ user }) {
 
   async function fetchPlan() {
     if (user) {
-      const plans = await planAPI.get();
+      const plans = await planAPI.get(user._id);
       setPlans(plans);
     }
   }
@@ -22,7 +22,11 @@ function ViewWorkoutPlan({ user }) {
         style={{ minHeight: "100vh", height: "auto" }}>
         <div
           className="col-2 d-flex justify-content-center align-items-center flex-column fade-down"
-          style={{ backgroundColor: "#243a4f", minHeight: "100vh", height: "auto" }}>
+          style={{
+            backgroundColor: "#243a4f",
+            minHeight: "100vh",
+            height: "auto",
+          }}>
           <div className="text-center mt-3 d-flex flex-column">
             {plan.map((plan, idx) =>
               user._id === plan.user ? (
@@ -38,7 +42,10 @@ function ViewWorkoutPlan({ user }) {
           </div>
         </div>
         <div className="col-9 container d-flex justify-content-center align-items-center">
-          <div className="text-center fs-2">Click on a workout <br /> OR <br /> if you havent made one <br /><Link to='/workout/create'>Click Here</Link></div>
+          <div className="text-center fs-2">
+            Click on a workout <br /> OR <br /> if you havent made one <br />
+            <Link to="/workout/create">Click Here</Link>
+          </div>
         </div>
       </div>
     </div>
