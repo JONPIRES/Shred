@@ -1,11 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
 import "../NavBar/navbar.css";
 import * as usersAPI from "../../utilities/users-api";
 
 export default function NavBar({ user, setUser }) {
+  const navigate = useNavigate();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      await usersAPI.deleteUser(user._id);
+      setUser(null);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   function handleLogout() {
     userService.logout();
     setUser(null);
@@ -81,6 +94,14 @@ export default function NavBar({ user, setUser }) {
                   <Link className="dropdown-item" to={`/profile/${user._id}`}>
                     Update Profile
                   </Link>
+                </div>
+
+                <div>
+                  <form className="dropdown-item">
+                    <button btn type="submit">
+                      Delete Profile
+                    </button>
+                  </form>
                 </div>
 
                 <div>
