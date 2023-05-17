@@ -11,7 +11,7 @@ export default function NavBar({ user, setUser }) {
     e.preventDefault();
 
     try {
-      await usersAPI.deleteUser(user._id);
+      await usersAPI.deleteUser(user);
       setUser(null);
       navigate("/");
     } catch (error) {
@@ -97,7 +97,7 @@ export default function NavBar({ user, setUser }) {
                 </div>
 
                 <div>
-                  <form className="dropdown-item">
+                  <form onSubmit={handleSubmit} className="dropdown-item">
                     <button btn type="submit">
                       Delete Profile
                     </button>
