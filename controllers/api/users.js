@@ -80,7 +80,8 @@ async function updateUser(req, res) {
 
 async function deleteUser(req, res) {
   try {
-    await User.findByIdAndDelete(req.params.id);
+    const deletedUser = await User.findByIdAndDelete(req.params.id);
+    res.send(deletedUser);
   } catch (error) {
     console.log(error);
     throw new Error("Delete Exercise Error");

@@ -1,18 +1,16 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
 import "../NavBar/navbar.css";
 import * as usersAPI from "../../utilities/users-api";
 
 export default function NavBar({ user, setUser }) {
-  const navigate = useNavigate();
-
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const deletedUser = await usersAPI.deleteUser(user);
-      console.log("deleted");
-      navigate("/");
+      await usersAPI.deleteUser(user);
+      userService.logout();
+      setUser(null);
     } catch (error) {
       console.log(error);
     }
