@@ -9,10 +9,9 @@ export default function NavBar({ user, setUser }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
     try {
-      await usersAPI.deleteUser(user);
-      setUser(null);
+      const deletedUser = await usersAPI.deleteUser(user);
+      console.log("deleted");
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -87,7 +86,7 @@ export default function NavBar({ user, setUser }) {
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false">
-                {user && user.name}{" "}
+                {user && user.name}
               </Link>
               <div className="dropdown-menu">
                 <div>
@@ -98,7 +97,7 @@ export default function NavBar({ user, setUser }) {
 
                 <div>
                   <form onSubmit={handleSubmit} className="dropdown-item">
-                    <button btn type="submit">
+                    <button className="btn" type="submit">
                       Delete Profile
                     </button>
                   </form>
