@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
 import ExerciseFrom from "../../components/ExercisesPage/ExerciseForm";
 import ViewExercises from "../../components/ViewExercises/ViewExercises";
@@ -24,35 +24,46 @@ export default function App() {
     <main className="App">
       <>
         <NavBar user={user} setUser={setUser} />
-        <Routes>
-          {/* Route components in here */}
-          <Route
-            path="/create-exercise"
-            element={<ExerciseFrom user={user} />}
-          />
-          <Route path="/exercise" element={<ViewExercises user={user} />} />
-          <Route path="/workout" element={<ViewWorkoutPlan user={user} />} />
-          <Route
-            path="/exercise/:id"
-            element={<ExerciseDetail user={user} />}
-          />
-          <Route path="/update/:id" element={<UpdateExercise />} />
-          <Route
-            path="/workout/create"
-            element={<CreateWorkoutPlan user={user} />}
-          />
-          <Route path="/signup" element={<SignUpForm />} />
-          <Route path="/login" element={<LoginForm setUser={setUser} />} />
-          <Route
-            path="/profile/:id"
-            element={<UpdateUser user={user} setUser={setUser} />}></Route>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/workout/:id" element={<WorkoutDetail user={user} />} />
-          <Route
-            path="/workout/:id/add-exercise"
-            element={<AddExerciseToWorkoutPlan />}
-          />
-        </Routes>
+        {user ? (
+          <Routes>
+            {/* Route components in here */}
+            <Route
+              path="/create-exercise"
+              element={<ExerciseFrom user={user} />}
+            />
+            <Route path="/exercise" element={<ViewExercises user={user} />} />
+            <Route path="/workout" element={<ViewWorkoutPlan user={user} />} />
+            <Route
+              path="/exercise/:id"
+              element={<ExerciseDetail user={user} />}
+            />
+            <Route path="/update/:id" element={<UpdateExercise />} />
+            <Route
+              path="/workout/create"
+              element={<CreateWorkoutPlan user={user} />}
+            />
+            <Route
+              path="/profile/:id"
+              element={<UpdateUser user={user} setUser={setUser} />}></Route>
+            <Route path="/" element={<HomePage />} />
+            <Route
+              path="/workout/:id"
+              element={<WorkoutDetail user={user} />}
+            />
+            <Route
+              path="/workout/:id/add-exercise"
+              element={<AddExerciseToWorkoutPlan />}
+            />
+            <Route path="*" element={<HomePage />} />
+          </Routes>
+        ) : (
+          <Routes>
+            <Route path="/exercise" element={<ViewExercises user={user} />} />
+            <Route path="/signup" element={<SignUpForm />} />
+            <Route path="/login" element={<LoginForm setUser={setUser} />} />
+            <Route path="*" element={<LoginForm setUser={setUser} />} />
+          </Routes>
+        )}
         <Footer />
       </>
     </main>
