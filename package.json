@@ -23,6 +23,7 @@
     "start_dev": "react-scripts start",
     "start_prod": "node server.js react-scripts start",
     "start": "node server.js",
+    "build_prod": "npm install && npm run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
